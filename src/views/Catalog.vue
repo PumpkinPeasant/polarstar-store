@@ -1,12 +1,10 @@
 <template>
-  <v-footer>
-    footer kdfjhsdkfjh
-  </v-footer>
+<div> Каталог</div>
 </template>
 
 <script>
 export default {
-name: "Footer"
+name: "Catalog"
 }
 </script>
 
