@@ -1,12 +1,28 @@
 <template>
-     <div>
+    <div class="container">
     <v-app-bar
       color="deep-purple accent-4"
       dense
       dark
     >
+     
      <v-app-bar-title><v-img contain src="../../assets/logo.svg" max-height="106" max-width="150"></v-img></v-app-bar-title>
-      <v-spacer></v-spacer>
+       <v-spacer>
+      
+      </v-spacer>
+
+       <v-btn text
+            tile
+            font="30px"
+            color="#F2F2F2"
+            v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">
+        {{item.title}}
+      </v-btn>
+
+      <v-spacer>
+      
+      </v-spacer>
+
 
       <v-btn icon>
         <v-icon>mdi-heart</v-icon>
@@ -142,6 +158,9 @@ name: "Header",
 
 <style scoped>
 
-
+.container {
+    width: 1160px;
+    margin: 0 auto;
+}
 
 </style>
