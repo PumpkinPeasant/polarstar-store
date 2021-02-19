@@ -1,4 +1,5 @@
 <template>
+  <v-container>
   <v-card>
     <v-navigation-drawer
         v-model="drawer"
@@ -39,6 +40,7 @@
       </v-list>
     </v-navigation-drawer>
   </v-card>
+  </v-container>
 </template>
 
 <script>
