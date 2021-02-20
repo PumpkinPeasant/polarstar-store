@@ -2,9 +2,8 @@
   <v-main id="v-main" fluid>
     <Header/>
     <v-divider dark id="menu-divider"></v-divider>
-    <v-container>
-      <Carousel/>
-    </v-container>
+    <mainsection></mainsection>
+
     <Footer/>
   </v-main>
 </template>
@@ -12,14 +11,13 @@
 <script>
 import Header from '@/components/mainPage/Header';
 import Footer from '@/components/mainPage/Footer';
-import Carousel from '@/components/mainPage/Carousel';
-
+import mainsection from '@/components/mainPage/MainSection';
 export default {
   name: "MainPage",
   components: {
     Header,
     Footer,
-    Carousel
+    mainsection
   },
 }
 </script>
@@ -32,4 +30,5 @@ export default {
   margin-left: 1%;
   margin-right: 1%;
 }
+
 </style>

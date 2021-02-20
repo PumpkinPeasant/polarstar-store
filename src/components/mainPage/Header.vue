@@ -1,6 +1,6 @@
 <template>
     <div class="block">
-      тест
+
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 
 
 export default {
-name: "Header",
+name: "header",
   data () {
     return {
       toggle_lang: [],
