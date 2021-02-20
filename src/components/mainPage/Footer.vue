@@ -1,6 +1,6 @@
 <template>
   <v-footer>
-    footer kdfjhsdkfjh
+    footer
   </v-footer>
 </template>
 

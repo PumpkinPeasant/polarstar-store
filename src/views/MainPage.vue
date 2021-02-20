@@ -23,12 +23,15 @@ export default {
 </script>
 
 <style scoped>
+
 #v-main{
   background: radial-gradient(#1C2541, #0B132B);
 }
+
+/**
 #menu-divider{
   margin-left: 1%;
   margin-right: 1%;
-}
+}**/
 
 </style>
