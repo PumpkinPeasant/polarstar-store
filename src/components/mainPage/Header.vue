@@ -1,69 +1,55 @@
 <template>
-  
- <v-card class="overflow-hidden">
-  <v-app-bar  color="#101831">
-      
-    <v-app-bar-title><v-img src="../../assets/logo.svg"></v-img></v-app-bar-title>
-
-
-       <v-spacer>
-      
-      </v-spacer>
-
+    <v-app-bar
+        flat
+        color="transparent"
+        min-height="110"
+        class="pa-5"
+    >
+     <v-app-bar-title><v-img contain src="../../assets/images/mainPage/logo.svg" max-height="45" max-width="290"></v-img></v-app-bar-title>
+      <v-spacer></v-spacer>
       <v-btn text
-            tile
-            color="#F2F2F2"
-            v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">
+             tile
+             color="#F2F2F2"
+             class="menu-button"
+             v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">
         {{item.title}}
       </v-btn>
+      <v-spacer></v-spacer>
 
-      
-       <v-spacer>
-      
-      </v-spacer>
-       
-    <v-btn-toggle
-        dense
-        group
-        color="#5BC0BE"
-        dark
-        v-model="toggle_lang"
-    >
 
-    <v-btn>
-      RU
-    </v-btn>
-
-    <v-btn disabled>
-      |
-    </v-btn>
-    
-    <v-btn>
-      EN
-    </v-btn>
-
-    </v-btn-toggle>
-    <v-btn
-        icon
-        color="#F2F2F2"
-    >
-    <v-icon>mdi-account-outline</v-icon>
-    </v-btn>
-
-    <v-btn
-        icon
-        color="#F2F2F2">
-      <v-badge
+      <v-btn-toggle
+          dense
+          group
           color="#5BC0BE"
-          content="6"
-          bottom>
-          <v-icon>mdi-cart-outline</v-icon>
-      </v-badge>
+          dark
+          v-model="toggle_lang"
+      >
+        <v-btn>
+          RU
+        </v-btn>
+        <v-btn>
+          EN
+        </v-btn>
+      </v-btn-toggle>
+      <v-btn icon >
+        <v-icon size="24" color="#F2F2F2">mdi-account-outline</v-icon>
+      </v-btn>
 
-    </v-btn>
-
-  </v-app-bar>
-</v-card>
+      <v-menu
+        left
+        bottom
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon size="24" color="#F2F2F2">mdi-cart-outline</v-icon>
+          </v-btn>
+        </template>
+      </v-menu>
+    </v-app-bar>
 </template>
 
 <script>
@@ -83,18 +69,15 @@ name: "Header",
       return [
         {
           title: 'Каталог',
-          route: '/catalog',
-          icon: null
+          route: '/catalog'
         },
         {
           title: 'Компания',
-          route: '/about',
-          icon: null
+          route: '/about'
         },
         {
           title: 'Контакты',
-          route: '/contacts',
-          icon: null
+          route: '/contacts'
         },
       ]
     }
@@ -103,13 +86,9 @@ name: "Header",
 </script>
 
 <style scoped>
-
-.container {
-    width: 1160px;
-    margin: 0 auto;
+.menu-button{
 
 }
-
 
 
 </style>

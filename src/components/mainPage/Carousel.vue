@@ -2,12 +2,13 @@
   <v-container>
       <v-carousel v-model="model">
       <v-carousel-item
-          v-for="(color, i) in colors"
+          v-for="(color) in colors"
           :key="color"
       >
         <v-sheet
             :color="color"
             height="100%"
+            width="100%"
             tile
         >
           <v-row
@@ -16,7 +17,7 @@
               justify="center"
           >
             <div class="display-3">
-              Slide {{ i + 1 }}
+              <v-img src=""></v-img>
             </div>
           </v-row>
         </v-sheet>
