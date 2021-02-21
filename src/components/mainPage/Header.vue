@@ -2,23 +2,27 @@
   <header class="header">
     <div class="container">
 
-      <div class="header__inner">  
+      <div class="header__inner">
+        <router-link
+            :to="'/'"
+        >
+          <svg class="logo" cursor="pointer">
+            <use xlink:href="#logo"></use>
+          </svg>
+        </router-link>
 
-        <svg class="logo">
-          <use xlink:href="#logo"></use>
-        </svg>
-        
+
         <div class="header__nav">
           <ul class="header__list">
             <li class="header__item">
-                <a class="header__link" href="#">каталог</a>
-
-            </li>
-            <li class="header__item">
-                <a class="header__link" href="#">компания</a>
-            </li>
-            <li  class="header__item">
-                <a class="header__link" href="#">контакты</a>
+              <router-link
+                  class="header__link"
+                  v-for="(item, i) in menuItems"
+                  :key="`menuItem${i}`"
+                  :to="item.route"
+              >
+                {{item.title}}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -29,9 +33,9 @@
             <li class="header__item-lang">
               <button id="ru-lang" class="ru-lang-button">RU</button>
             </li>
-           
+
            <li class="header__item-lang">
-              <button id="eu-lang" class="eu-lang-button">EU</button>
+              <button id="en-lang" class="en-lang-button">EN</button>
             </li>
 
             <li  class="header__item">
@@ -51,7 +55,7 @@
           </ul>
         </div>
 
-      </div> 
+      </div>
 
     </div>
   </header>
@@ -116,11 +120,11 @@ name: "header",
     height: 40px;
     width: 206px;
     fill: #F2F2F2;
-   
+
     outline: 2px solid rgb(217, 255, 0);
   }
 
-  /* header__nav 
+  /* header__nav
   **************************/
 
   /*.header__nav {
@@ -132,7 +136,7 @@ name: "header",
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     /*outline: 2px solid red;*/
   }
 
@@ -168,7 +172,7 @@ name: "header",
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     outline: 2px solid red;
   }
 
@@ -190,14 +194,14 @@ name: "header",
       margin-left: 16px;
   }
 
-      
+
      /****** button *******/
 
   .header__item-lang {
       padding: 0 8px;
       color: #fff;
   }
-  
+
 
 .header__item-lang {
   position: relative;
@@ -212,10 +216,10 @@ name: "header",
 	width: 1px;
 	border-top: 12px solid #f8f8f8;
 }
- 
+
 
     /****** button *******/
- 
+
   .header-menu .header--user {
     display: block;
     width: 20px;
@@ -228,7 +232,7 @@ name: "header",
     width: 30px;
     height: 30px;
   }
-  
+
 
 
 
