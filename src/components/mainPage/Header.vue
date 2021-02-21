@@ -4,25 +4,23 @@
 
       <div class="header__inner">  
 
-        <div class="logo">
-          <svg>
-            <use xlink:href="#logo"></use>
-          </svg>
-        </div>
-
-        <nav class="header-nav">
-          <ul>
-            <li>
-                <a href="#">каталог</a>
+        <svg class="logo">
+          <use xlink:href="#logo"></use>
+        </svg>
+        
+        <div class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+                <a class="header__link" href="#">каталог</a>
             </li>
-            <li>
-                <a href="#">компания</a>
+            <li class="header__item">
+                <a class="header__link" href="#">компания</a>
             </li>
-            <li>
-                <a href="#">контакты</a>
+            <li  class="header__item">
+                <a class="header__link" href="#">контакты</a>
             </li>
           </ul>
-        </nav>
+        </div>
 
         <div class="header-menu">
           <ul>
@@ -80,9 +78,72 @@ name: "header",
 
 <style scoped>
 
+   /*logo
+  **************************/
+
   .header {
     padding: 25px 0;
     outline: 2px solid blue;
  }
+
+ .header__inner {
+    display: flex;
+    justify-content: space-between;
+
+    outline: 2px solid rgb(255, 0, 0);
+ }
+
+  /*logo
+  **************************/
+
+  .logo {
+    display: block;
+    height: 36px;
+    width: 180px;
+    fill: #F2F2F2;
+   
+    outline: 2px solid rgb(217, 255, 0);
+  }
+
+  /* header__nav 
+  **************************/
+
+  .header__nav {
+    
+     outline: 2px solid rgb(217, 255, 0);
+  }
+
+  .header__nav .header__list {
+   display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    outline: 2px solid red;
+  }
+
+  .header__item {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .header__item + .header__item {
+      margin-left: 30px;
+  }
+
+  .header__nav  .header__link {
+    color: #f2f2f2;
+    text-decoration: none;
+ }
+
+
+
+ 
+
+
+  
+
+
 
 </style>

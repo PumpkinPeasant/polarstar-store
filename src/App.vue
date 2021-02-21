@@ -26,7 +26,7 @@ export default {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
 
     background-image: url(./assets/images/mainPage/img.jpg) no-repeat;
     background-position: center;
