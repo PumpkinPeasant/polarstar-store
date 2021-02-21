@@ -42,11 +42,13 @@
                 </a>
             </li>
             <li  class="header__item">
-                <a class="header__link header__link" href="#">
+                <a class="header__link header__link basket" href="#">
                   <svg class="header__icon header--shopping">
                     <use xlink:href="#shopping"></use>
                   </svg>
-                </a>
+                  <spen class="basket-num">1</spen>
+                </a> 
+               
             </li>
           </ul>
         </div>
@@ -205,7 +207,7 @@ name: "header",
   }
   
 
-.header__item-lang + .header__item-lang {
+.header__item-lang  {
   position: relative;
   
 }
@@ -243,8 +245,29 @@ name: "header",
     width: 30px;
     height: 30px;
   }
-  
 
+  /***** basket-num *****/
+  .basket{
+    position:  relative;
+  }
+
+  .basket-num {
+    position: absolute;
+    bottom: 2px;
+    right: -2px;
+    font-family: Ariel;
+    width: 16px;
+    padding-left: 4px;
+    height: 16px;
+    background: #5BC0BE;
+    font-size: 10px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 60%;
+    font-weight: 800;
+
+
+  }
 
 
 </style>
