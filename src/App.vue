@@ -54,7 +54,7 @@ export default {
     margin: 0 auto;
     padding: 0 15px;
 
-    outline: 2px solid green;
+    /*outline: 2px solid green;*/
   }
 
 

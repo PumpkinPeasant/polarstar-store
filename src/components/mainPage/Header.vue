@@ -27,11 +27,11 @@
 
           <ul class="header__list">
             <li class="header__item-lang">
-              <button id="ru-lang" class="ru-lang-button">RU</button>
+              <button id="ru-lang" class="ru-lang-button">ru</button>
             </li>
            
            <li class="header__item-lang">
-              <button id="eu-lang" class="eu-lang-button">EU</button>
+              <button id="eu-lang" class="eu-lang-button">eu</button>
             </li>
 
             <li  class="header__item">
@@ -117,7 +117,7 @@ name: "header",
     width: 206px;
     fill: #F2F2F2;
    
-    outline: 2px solid rgb(217, 255, 0);
+    /*outline: 2px solid rgb(217, 255, 0);*/
   }
 
   /* header__nav 
@@ -162,6 +162,11 @@ name: "header",
 
 /* header-menu
 *******************/
+  .header-menu {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+  }
 
   .header-menu .header__list {
    display: flex;
@@ -169,14 +174,13 @@ name: "header",
     padding: 0;
     list-style: none;
     
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
   }
 
-  .header-menu {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 300;
-  }
+  
+  .header-menu  li:nth-child(3) {
+        margin-left: 8px;
+    }
 
   .header-menu  .header__link {
     display: block;
@@ -186,21 +190,23 @@ name: "header",
     transition: color .3s;
  }
 
-  .header-menu .header__item  {
+  .header-menu .header__item + .header__item {
       margin-left: 16px;
   }
+
 
       
      /****** button *******/
 
   .header__item-lang {
-      padding: 0 8px;
-      color: #fff;
+      padding: 0 6px;
+      color: #f8f8f8;
   }
   
 
-.header__item-lang {
+.header__item-lang + .header__item-lang {
   position: relative;
+  
 }
 
 .header__item-lang + .header__item-lang:before {
@@ -208,11 +214,19 @@ name: "header",
 	display: block;
 	position: absolute;
 	top: 4px;
-	left: -1px;
+	left: 0px;
 	width: 1px;
 	border-top: 12px solid #f8f8f8;
 }
  
+.eu-lang-button,
+.ru-lang-button {
+  font-size: 14px;
+  padding: 0 4px ;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+}
 
     /****** button *******/
  
