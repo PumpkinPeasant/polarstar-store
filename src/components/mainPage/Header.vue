@@ -1,24 +1,16 @@
 <template>
   <header class="header">
     <div class="container">
-
       <div class="header__inner">
-
         <svg class="logo">
           <use xlink:href="#logo"></use>
         </svg>
-
         <div class="header__nav">
           <ul class="header__list">
             <li class="header__item">
-                <a class="header__link" href="#">каталог</a>
-
-            </li>
-            <li class="header__item">
-                <a class="header__link" href="#">компания</a>
-            </li>
-            <li  class="header__item">
-                <a class="header__link" href="#">контакты</a>
+              <router-link class="header__link" v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">
+                  {{item.title}}
+              </router-link>
             </li>
           </ul>
         </div>
