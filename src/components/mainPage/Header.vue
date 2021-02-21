@@ -179,7 +179,7 @@ name: "header",
 
   
   .header-menu  li:nth-child(3) {
-        margin-left: 8px;
+        margin-left: 7px;
     }
 
   .header-menu  .header__link {
@@ -199,7 +199,7 @@ name: "header",
      /****** button *******/
 
   .header__item-lang {
-      padding: 0 6px;
+      padding: 0 8px;
       color: #f8f8f8;
   }
   
