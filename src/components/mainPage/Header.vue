@@ -3,26 +3,22 @@
     <div class="container">
 
       <div class="header__inner">
-        <router-link
-            :to="'/'"
-        >
-          <svg class="logo" cursor="pointer">
-            <use xlink:href="#logo"></use>
-          </svg>
-        </router-link>
 
+        <svg class="logo">
+          <use xlink:href="#logo"></use>
+        </svg>
 
         <div class="header__nav">
           <ul class="header__list">
             <li class="header__item">
-              <router-link
-                  class="header__link"
-                  v-for="(item, i) in menuItems"
-                  :key="`menuItem${i}`"
-                  :to="item.route"
-              >
-                {{item.title}}
-              </router-link>
+                <a class="header__link" href="#">каталог</a>
+
+            </li>
+            <li class="header__item">
+                <a class="header__link" href="#">компания</a>
+            </li>
+            <li  class="header__item">
+                <a class="header__link" href="#">контакты</a>
             </li>
           </ul>
         </div>
@@ -121,7 +117,7 @@ name: "header",
     width: 206px;
     fill: #F2F2F2;
 
-    outline: 2px solid rgb(217, 255, 0);
+    /*outline: 2px solid rgb(217, 255, 0);*/
   }
 
   /* header__nav
@@ -173,7 +169,7 @@ name: "header",
     padding: 0;
     list-style: none;
 
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
   }
 
   .header-menu {
@@ -193,6 +189,7 @@ name: "header",
   .header-menu .header__item  {
       margin-left: 16px;
   }
+
 
 
      /****** button *******/
@@ -217,6 +214,14 @@ name: "header",
 	border-top: 12px solid #f8f8f8;
 }
 
+.en-lang-button,
+.ru-lang-button {
+  font-size: 14px;
+  padding: 0 4px ;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+}
 
     /****** button *******/
 
@@ -233,6 +238,10 @@ name: "header",
     height: 30px;
   }
 
+  /***** basket-num *****/
+  .cart{
+    position:  relative;
+  }
 
 
 
