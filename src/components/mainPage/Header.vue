@@ -12,6 +12,7 @@
           <ul class="header__list">
             <li class="header__item">
                 <a class="header__link" href="#">каталог</a>
+
             </li>
             <li class="header__item">
                 <a class="header__link" href="#">компания</a>
@@ -23,18 +24,29 @@
         </div>
 
         <div class="header-menu">
+
           <ul class="header__list">
-            <li class="header__item">
-              
+            <li class="header__item-lang">
+              <button id="ru-lang" class="ru-lang-button">RU</button>
             </li>
-            <li class="header__item">
-              
+           
+           <li class=" header__item-lang">
+              <button id="eu-lang" class="eu-lang-button">EU</button>
+            </li>
+
+            <li  class="header__item">
+              <a class="header__link header__link" href="#">
+                   <svg class="header__icon header--user">
+                      <use xlink:href="#user"></use>
+                   </svg>
+                </a>
             </li>
             <li  class="header__item">
-                <a class="header__link" href="#"></a>
-            </li>
-            <li  class="header__item">
-                <a class="header__link" href="#"></a>
+                <a class="header__link header__link" href="#">
+                  <svg class="header__icon header--shopping">
+                    <use xlink:href="#shopping"></use>
+                  </svg>
+                </a>
             </li>
           </ul>
         </div>
@@ -81,7 +93,7 @@ name: "header",
 
 <style scoped>
 
-   /*logo
+   /*header
   **************************/
 
   .header {
@@ -92,8 +104,8 @@ name: "header",
  .header__inner {
     display: flex;
     justify-content: space-between;
-
-    outline: 2px solid rgb(255, 0, 0);
+    align-items: center;
+    /*outline: 2px solid rgb(255, 0, 0);*/
  }
 
   /*logo
@@ -101,8 +113,8 @@ name: "header",
 
   .logo {
     display: block;
-    height: 36px;
-    width: 180px;
+    height: 40px;
+    width: 206px;
     fill: #F2F2F2;
    
     outline: 2px solid rgb(217, 255, 0);
@@ -111,10 +123,9 @@ name: "header",
   /* header__nav 
   **************************/
 
-  .header__nav {
-    
-     outline: 2px solid rgb(217, 255, 0);
-  }
+  /*.header__nav {
+    outline: 2px solid rgb(217, 255, 0);
+  }*/
 
   .header__nav .header__list {
    display: flex;
@@ -122,17 +133,19 @@ name: "header",
     padding: 0;
     list-style: none;
     
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
   }
 
   .header__item {
     display: inline-block;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
   }
 
-  .header__item + .header__item {
-      margin-left: 30px;
+  .header__nav .header__item + .header__item {
+      margin-left: 20px;
   }
 
   .header__nav  .header__link {
@@ -149,14 +162,58 @@ name: "header",
 
 /* header-menu
 *******************/
-.header-menu {
-  display: flex;
-}
 
+  .header-menu .header__list {
+   display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    outline: 2px solid red;
+  }
 
+  .header-menu {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .header-menu  .header__link {
+    display: block;
+    color: #f2f2f2;
+    text-decoration: none;
+
+    transition: color .3s;
+ }
+
+  .header-menu .header__item  {
+      margin-left: 16px;
+  }
+
+      
+     /****** button *******/
+
+  .header__item-lang {
+      padding: 0 14px;
+      color: #fff;
+      outline: 2px solid gold;
+ }
  
 
+    /****** button *******/
+ 
+  .header-menu .header--user {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
 
+ .header-menu .header--shopping {
+    display: block;
+    margin-bottom: -8px;
+    width: 30px;
+    height: 30px;
+  }
   
 
 

@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 
-#v-main{
+#v-main {
   background: radial-gradient(#1C2541, #0B132B);
 }
 
