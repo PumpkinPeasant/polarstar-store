@@ -104,6 +104,20 @@ name: "header",
     outline: 2px solid blue;
  }
 
+ .header .container {
+    position: relative;
+  }
+
+  .header .container:after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: -120px;
+      bottom: -23px;
+      width: 1200px;
+      border-bottom:  0.8px solid #273660;
+  }
+
  .header__inner {
     display: flex;
     justify-content: space-between;
@@ -253,18 +267,18 @@ name: "header",
 
   .basket-num {
     position: absolute;
-    bottom: 2px;
+    bottom: 4px;
     right: -2px;
-    font-family: Ariel;
-    width: 16px;
+    width: 14px;
+    height: 14px;
+    color: #000;
     padding-left: 4px;
-    height: 16px;
     background: #5BC0BE;
-    font-size: 10px;
+    font-size: 9px;
     text-align: center;
-    line-height: 18px;
+    line-height: 14px;
     border-radius: 60%;
-    font-weight: 800;
+    font-weight: bolder;
 
 
   }
