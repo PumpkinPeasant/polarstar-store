@@ -97,7 +97,8 @@ name: "header",
   **************************/
 
   .header {
-    padding: 25px 0;
+    padding-top: 30px;
+    padding-bottom: 25px;
     outline: 2px solid blue;
  }
 
@@ -113,7 +114,7 @@ name: "header",
 
   .logo {
     display: block;
-    height: 30px;
+    height: 32px;
     width: 190px;
     fill: #F2F2F2;
    
