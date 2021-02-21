@@ -30,7 +30,7 @@
               <button id="ru-lang" class="ru-lang-button">RU</button>
             </li>
            
-           <li class=" header__item-lang">
+           <li class="header__item-lang">
               <button id="eu-lang" class="eu-lang-button">EU</button>
             </li>
 
@@ -194,10 +194,24 @@ name: "header",
      /****** button *******/
 
   .header__item-lang {
-      padding: 0 14px;
+      padding: 0 8px;
       color: #fff;
-      outline: 2px solid gold;
- }
+  }
+  
+
+.header__item-lang {
+  position: relative;
+}
+
+.header__item-lang + .header__item-lang:before {
+   content: " ";
+	display: block;
+	position: absolute;
+	top: 4px;
+	left: -1px;
+	width: 1px;
+	border-top: 12px solid #f8f8f8;
+}
  
 
     /****** button *******/
