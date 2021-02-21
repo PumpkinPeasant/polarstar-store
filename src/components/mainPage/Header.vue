@@ -1,43 +1,48 @@
 <template>
-    <div>
-      <header class="header">
-        <div class="container">
+  <header class="header">
+    <div class="container">
 
-            <div class="logo">
-                <img>
-            </div>
+      <div class="header__inner">  
 
-            <nav class="header-nav">
-              <ul>
-                <li>
-                    <a href="">каталог</a>
-                </li>
-                <li>
-                    <a href="">компания</a>
-                </li>
-                <li>
-                    <a href="">контакты</a>
-                </li>
-              </ul>
-            </nav>
-
-            <div class="header-menu">
-              <ul>
-                <li>
-                    
-                </li>
-                <li>
-                    
-                </li>
-                <li>
-        
-                </li>
-              </ul>
-            </div>
-
+        <div class="logo">
+          <svg>
+            <use xlink:href="#logo"></use>
+          </svg>
         </div>
-      </header>
+
+        <nav class="header-nav">
+          <ul>
+            <li>
+                <a href="#">каталог</a>
+            </li>
+            <li>
+                <a href="#">компания</a>
+            </li>
+            <li>
+                <a href="#">контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-menu">
+          <ul>
+            <li>
+                
+            </li>
+            <li>
+                
+            </li>
+            <li>
+    
+            </li>
+          </ul>
+        </div>
+
+      </div> 
+
     </div>
+  </header>
+
 </template>
 
 <script>
@@ -74,22 +79,10 @@ name: "header",
 </script>
 
 <style scoped>
-.block{
- color: #fff;
- font-family: 'Montserrat', sans-serif;
- font-size: 14px;
- font-weight: 500;
-}
 
-
-
-.container {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 15px;
-  outline: 2px solid green;
-}
-
+  .header {
+    padding: 25px 0;
+    outline: 2px solid blue;
+ }
 
 </style>
