@@ -25,11 +25,9 @@ export default {
   body {
     margin: 0;
     padding: 0;
+    color: #f2f2f2;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-
-    background-image: url(./assets/images/mainPage/img.jpg) no-repeat;
-    background-position: center;
+    -webkit-font-smoothing: antialiased;
   }
 
   *,
@@ -37,6 +35,10 @@ export default {
   ::after {
     box-sizing: border-box;
     -moz-box-align: border-box;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
   }
 
   p {

@@ -125,7 +125,7 @@ name: "header",
   .header__item {
     display: inline-block;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   .header__item + .header__item {
@@ -135,7 +135,16 @@ name: "header",
   .header__nav  .header__link {
     color: #f2f2f2;
     text-decoration: none;
+
+    transition: color .3s;
  }
+
+  .header__nav  .header__link:hover {
+    color: #5BC0BE;
+ }
+
+
+
 
 
 
