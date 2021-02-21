@@ -113,8 +113,8 @@ name: "header",
 
   .logo {
     display: block;
-    height: 40px;
-    width: 206px;
+    height: 30px;
+    width: 190px;
     fill: #F2F2F2;
    
     /*outline: 2px solid rgb(217, 255, 0);*/
