@@ -23,15 +23,18 @@
         </div>
 
         <div class="header-menu">
-          <ul>
-            <li>
-                
+          <ul class="header__list">
+            <li class="header__item">
+              
             </li>
-            <li>
-                
+            <li class="header__item">
+              
             </li>
-            <li>
-    
+            <li  class="header__item">
+                <a class="header__link" href="#"></a>
+            </li>
+            <li  class="header__item">
+                <a class="header__link" href="#"></a>
             </li>
           </ul>
         </div>
@@ -144,8 +147,11 @@ name: "header",
  }
 
 
-
-
+/* header-menu
+*******************/
+.header-menu {
+  display: flex;
+}
 
 
  
