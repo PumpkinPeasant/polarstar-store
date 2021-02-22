@@ -34,10 +34,11 @@
                 </a>
             </li>
             <li  class="header__item">
-                <a class="header__link header__link" href="#">
+                <a class="header__link basket" href="#">
                   <svg class="header__icon header--shopping">
                     <use xlink:href="#shopping"></use>
                   </svg>
+                  <div class="basket-num"></div>
                 </a>
             </li>
           </ul>
@@ -91,13 +92,15 @@ name: "header",
 
   .header {
     width: 100%;
+   
     position: relative;
     z-index: 1000;
    
     padding-top: 30px;
     padding-bottom: 25px;
-    outline: 2px solid blue;
+    outline: 1px solid red;
  }
+
 
  .header .container {
     position: absolute;
