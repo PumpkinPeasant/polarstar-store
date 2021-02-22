@@ -8,30 +8,34 @@
         @changeSlide="changeSlide"
         :visibleSlide="visibleSlide"
         >
-        <carouselslide v-for="(slide,index) in slides"
+        <carouselslide  class="slide" v-for="(slide,index) in slides"
                        :key="slide.img"
                        :index="index"
                        :visibleSlide="visibleSlide"
         >
-          <div class="slide__block">   
+         
 
             <h1 class="slide__title">{{slide.title}}</h1>
-            <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
+            <div class="slide__text">
 
-            <div class="slide__round">
-              <div class="slide__round__param">{{slide.param1}}</div>
-              <div class="slide__round__param">{{slide.param2}}</div>
-              <div class="slide__round__param">{{slide.param3}}</div>
-              <div class="slide__round__param">{{slide.param4}}</div>
+              <div class="slide__block"> 
+                <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
+
+                <div class="slide__round">
+                  <div class="slide__round__param">{{slide.param1}}</div>
+                  <div class="slide__round__param">{{slide.param2}}</div>
+                  <div class="slide__round__param">{{slide.param3}}</div>
+                  <div class="slide__round__param">{{slide.param4}}</div>
+                </div>
+
+           
+              <p class="slide__description">{{slide.description}}</p>
+              <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
             </div>
-
-            <p class="slide__description">{{slide.description}}</p>
-            <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
-
-          </div>
+        
 
             <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
-
+           </div>
             <!--<div class="main__section_wave">
               <img :src="getImgUrl(slide.wave)" alt="">
              </div>-->
@@ -112,6 +116,10 @@ name: "MainSection",
 }
 
 
+.slide {
+   outline: 2px solid red;
+}
+
 
 h1{
   color:#F2F2F2;
@@ -122,6 +130,10 @@ h1{
   line-height:  60px;
   margin-bottom: 48px;
   outline: 2px solid black;
+}
+
+.slide__text{
+   outline: 8px solid green;
 }
 
 p{
@@ -141,6 +153,12 @@ p{
   max-width: 600px;
   max-height: 500px;
 }
+
+.slide__block {
+
+  outline: 5px solid yellow;
+}
+
 
   /***** slide__round  *****/
 
