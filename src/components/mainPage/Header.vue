@@ -90,17 +90,12 @@ name: "header",
   **************************/
 
   .header {
-<<<<<<< HEAD
     width: 100%;
-    height: 20%;
     position: relative;
     z-index: 1000;
    
     padding-top: 30px;
     padding-bottom: 25px;
-=======
-    padding: 25px 0;
->>>>>>> e76d6c22bff0fe61640f466546e04448da24f1af
     outline: 2px solid blue;
  }
 
@@ -268,7 +263,6 @@ name: "header",
     position:  relative;
   }
 
-<<<<<<< HEAD
   .basket-num {
     position: absolute;
     bottom: 4px;
@@ -286,8 +280,6 @@ name: "header",
 
 
   }
-=======
->>>>>>> e76d6c22bff0fe61640f466546e04448da24f1af
 
 
 </style>
