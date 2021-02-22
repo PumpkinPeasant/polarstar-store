@@ -1,80 +1,37 @@
 <template>
-<<<<<<< Updated upstream
-    <div class="carousel">
+    <section class="carousel">
+      <div class="container">
 
-      <carousel
-      @nextSlide="nextSlide"
-      @prevSlide="prevSlide"
-      @changeSlide="changeSlide"
-      :visibleSlide="visibleSlide"
-      >
-        <carouselslide v-for="(slide,index) in slides"
-                       :key="slide.img"
-                       :index="index"
-                       :visibleSlide="visibleSlide"
-        >
-          <h1 class="slide__title">{{slide.title}}</h1>
-          <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
-          <div class="slide__round__param">{{slide.param1}}</div>
-          <div class="slide__round__param">{{slide.param2}}</div>
-          <div class="slide__round__param">{{slide.param3}}</div>
-          <div class="slide__round__param">{{slide.param4}}</div>
-          <p class="slide__description">{{slide.description}}</p>
-          <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
-          <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
-          <div class="main__section_wave">
-            <img :src="getImgUrl(slide.wave)" alt="">
-          </div>
-        </carouselslide>
-      </carousel>
-
-    </div>
-
-=======
-   <section class="carousel">
-    <div class="container">
-
-      <carousel  class="slider"
+        <carousel
         @nextSlide="nextSlide"
         @prevSlide="prevSlide"
         @changeSlide="changeSlide"
         :visibleSlide="visibleSlide"
         >
-        <carouselslide class="slider__block" v-for="(slide,index) in slides"
-                      :key="slide.img"
-                      :index="index"
-                      :visibleSlide="visibleSlide"
+        <carouselslide v-for="(slide,index) in slides"
+                       :key="slide.img"
+                       :index="index"
+                       :visibleSlide="visibleSlide"
         >
-
-        <div  class="slide">
-
-          <h1 class="slide__title">{{slide.title}}</h1>
-          <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
-
-          <div class="slide__inner">
-
-            <div class="slide__round">
-              <div class="slide__round__param">{{slide.param1}}</div>
-              <div class="slide__round__param">{{slide.param2}}</div>
-              <div class="slide__round__param">{{slide.param3}}</div>
-              <div class="slide__round__param">{{slide.param4}}</div>
-            </div>
-
+            <h1 class="slide__title">{{slide.title}}</h1>
+            <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
+            <div class="slide__round__param">{{slide.param1}}</div>
+            <div class="slide__round__param">{{slide.param2}}</div>
+            <div class="slide__round__param">{{slide.param3}}</div>
+            <div class="slide__round__param">{{slide.param4}}</div>
             <p class="slide__description">{{slide.description}}</p>
-            <button class="slide__catalog__btn">В каталог</button>
+            <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
+            <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
+           <div class="main__section_wave">
+              <img :src="getImgUrl(slide.wave)" alt="">
+             </div>
+          </carouselslide>
+        </carousel>
 
-          </div>
+       </div>
+        
+    </section>
 
-        </div>
-
-          <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
-        </carouselslide>
-
-      </carousel>
-
-    </div>
-  </section>
->>>>>>> Stashed changes
 </template>
 
 
@@ -143,21 +100,6 @@ name: "MainSection",
   overflow: hidden;
 }
 
-.container {
-  outline: 2px solid green;
-}
-
-.slider {
-  padding-top: 35px;
-  position: relative;
-
-  outline: 2px solid red;
-}
-
-.slider__block {
-  display: flex;
-  outline: 2px solid yellow;
-}
 
 
 h1{
@@ -175,32 +117,14 @@ p{
   color:#F2F2F2;
   font-size: 23px;
 }
-<<<<<<< Updated upstream
-.main__section_wave{
-  width: 100%;
 
-}
-.carousel{
-  border: 2px solid #18ffff;
-  background-color: white;
-  overflow: hidden;
-=======
-
-.slide__inner {
-  width: 320px;
-  outline: 2px solid black;
->>>>>>> Stashed changes
-}
 
 .slide__model{
   font-family: Montserrat,sans-serif;
   font-size: 30px;
 }
 .slide__img{
-  position: absolute;
-  top: 130px;
-  right: -10px;
-  z-index: 1;
+  
   max-width: 600px;
   max-height: 500px;
 }
@@ -208,7 +132,7 @@ p{
   /***** slide__round  *****/
 
 .slide__round {
-  display: flex;
+
 }
 
 .slide__model__name{
