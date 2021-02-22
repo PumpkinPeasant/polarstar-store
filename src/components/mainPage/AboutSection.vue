@@ -24,7 +24,7 @@
       <p>Мы выолняем заказы как <span>физических</span> лиц, так и <span>юридических</span>.</p>
     </div>
   </div>
-  <img class="about__section__bg" src="@/assets/images/mainPage/bg_wave.svg" alt="">
+<!--  <img class="about__section__bg" src="@/assets/images/mainPage/bg_wave.svg" alt="">-->
 </div>
 </template>
 

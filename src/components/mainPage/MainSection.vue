@@ -13,14 +13,10 @@
                        :index="index"
                        :visibleSlide="visibleSlide"
         >
-         
-
             <h1 class="slide__title">{{slide.title}}</h1>
             <div class="slide__text">
-
-              <div class="slide__block"> 
+              <div class="slide__block">
                 <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
-
                 <div class="slide__inner">
                   <div class="slide__round">
                     <div class="slide__round__param">{{slide.param1}}</div>
@@ -28,8 +24,6 @@
                     <div class="slide__round__param">{{slide.param3}}</div>
                     <div class="slide__round__param">{{slide.param4}}</div>
                   </div>
-
-            
                   <p class="slide__description">{{slide.description}}</p>
                   <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
                 </div>
@@ -44,15 +38,15 @@
           </carouselslide>
         </carousel>
 
+
        </div>
-        
+
     </section>
 
 </template>
 
 
 <script>
-
 import carousel from '@/components/mainPage/Carousel';
 import carouselslide from '@/components/mainPage/CarouselSlide';
 
@@ -164,7 +158,7 @@ p{
 }
 
 .slide__block {
-  
+
   outline: 5px solid yellow;
 }
 
@@ -195,18 +189,18 @@ p{
 }
 
 .slide__round__param {
- 
   color:#F2F2F2;
   font-family: Montserrat,sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border: 1px solid #5BC0BE;
   border-radius: 50%;
-  line-height:  50px;
+  line-height: 60px;
   text-align: center;
   display: inline-block;
+  margin: 15px;
   box-shadow: 0 0 5px rgba(112,234,231,0.7);
 }
 
@@ -230,5 +224,8 @@ p{
   padding: 10px 35px;
   border-radius: 7px;
   box-shadow: 0 0 9px rgba(112,234,231,0.7);
+}
+.main__section_wave{
+  width: 100%;
 }
 </style>

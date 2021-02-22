@@ -1,13 +1,10 @@
 <template>
   <header class="header">
     <div class="container">
-
       <div class="header__inner">
-
         <svg class="logo">
           <use xlink:href="#logo"></use>
         </svg>
-
         <div class="header__nav">
           <ul class="header__list">
             <li class="header__item">
@@ -37,7 +34,9 @@
                 </router-link>
             </li>
             <li  class="header__item">
-                <a class="header__link  header__link basket" href="#">
+
+                <a class="header__link header__link" @click="toggleCart = true">
+
                   <svg class="header__icon header--shopping">
                     <use xlink:href="#shopping"></use>
                   </svg>
@@ -96,7 +95,7 @@ name: "header",
 
   .header {
     width: 100%;
-   
+
     position: relative;
     z-index: 1000;
 
@@ -165,7 +164,7 @@ name: "header",
 
   .header__nav  .header__item {
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 2.8px;
     text-transform: uppercase;
