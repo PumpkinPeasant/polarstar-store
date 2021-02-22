@@ -56,8 +56,9 @@
       </div> 
 
     </div>
+   
   </header>
-
+ 
 </template>
 
 <script>
@@ -99,10 +100,23 @@ name: "header",
   **************************/
 
   .header {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    z-index: 1000;
+   
     padding-top: 30px;
     padding-bottom: 25px;
     outline: 2px solid blue;
  }
+
+ .header .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
  .header .container {
     position: relative;
@@ -113,9 +127,9 @@ name: "header",
       position: absolute;
       display: block;
       left: -120px;
-      bottom: -23px;
+      bottom: -19px;
       width: 1200px;
-      border-bottom:  0.8px solid #273660;
+      outline:  1px solid #212D51;
   }
 
  .header__inner {
