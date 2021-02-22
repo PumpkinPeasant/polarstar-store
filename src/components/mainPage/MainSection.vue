@@ -111,13 +111,14 @@ name: "MainSection",
 
 <style scoped>
 
-.carousel{
+.carousel {
   background-color: white;
   overflow: hidden;
 }
 
 
 .slide {
+  padding-top: 40px;
    outline: 2px solid red;
 }
 
@@ -144,11 +145,16 @@ p{
 }
 
 
-.slide__model{
-  font-family: Montserrat,sans-serif;
-  font-size: 30px;
+.slide__model {
+  font-family: Montserrat, sans-serif;
+  font-weight: 100;
+  font-size: 25px;
 
   outline: 2px solid black;
+}
+
+.slide__model  span {
+  font-size: 20px;
 }
 
 .slide__block {
@@ -158,7 +164,7 @@ p{
 
 .slide__img{
   display: block;
-  margin-left: 80px;
+  margin-left: 60px;
   max-width: 560px;
   max-height: 500px;
 }
