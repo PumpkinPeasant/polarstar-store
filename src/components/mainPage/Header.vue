@@ -46,9 +46,9 @@
       </div>
 
     </div>
-   
+
   </header>
- 
+
 </template>
 
 <script>
@@ -93,7 +93,7 @@ name: "header",
     width: 100%;
     position: relative;
     z-index: 1000;
-   
+
     padding-top: 30px;
     padding-bottom: 25px;
     outline: 2px solid blue;

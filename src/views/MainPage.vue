@@ -2,8 +2,9 @@
   <v-main id="v-main" fluid>
     <Header id="header"/>
     <v-divider dark id="menu__divider"></v-divider>
-    <mainsection id="mainSection"></mainsection>
-
+    <main-section id="mainSection">
+    </main-section>
+    <about-section id="aboutSection"></about-section>
     <Footer/>
   </v-main>
 </template>
@@ -11,13 +12,15 @@
 <script>
 import Header from '@/components/mainPage/Header';
 import Footer from '@/components/mainPage/Footer';
-import mainsection from '@/components/mainPage/MainSection';
+import MainSection from '@/components/mainPage/MainSection';
+import AboutSection from "@/components/mainPage/AboutSection";
 export default {
   name: "MainPage",
   components: {
+    AboutSection,
     Header,
     Footer,
-    mainsection
+    MainSection
   },
 }
 </script>
@@ -27,6 +30,13 @@ export default {
 #mainSection {
   padding-top: 90px;
   background: radial-gradient(#1C2541, #0B132B);
+}
+
+#aboutSection {
+
+  background: radial-gradient(#1C2541, #0B132B);
+
+  border: 2px solid springgreen;
 }
 #v-main{
   background-color: lightblue;

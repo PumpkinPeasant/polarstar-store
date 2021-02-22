@@ -1,29 +1,34 @@
 <template>
-  <div class="carousel">
-    <carousel
-    @nextSlide="nextSlide"
-    @prevSlide="prevSlide"
-    @changeSlide="changeSlide"
-    :visibleSlide="visibleSlide"
-    >
-      <carouselslide v-for="(slide,index) in slides"
-                     :key="slide.img"
-                     :index="index"
-                     :visibleSlide="visibleSlide"
-      >
-        <h1 class="slide__title">{{slide.title}}</h1>
-        <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
-        <div class="slide__round__param">{{slide.param1}}</div>
-        <div class="slide__round__param">{{slide.param2}}</div>
-        <div class="slide__round__param">{{slide.param3}}</div>
-        <div class="slide__round__param">{{slide.param4}}</div>
-        <p class="slide__description">{{slide.description}}</p>
-        <button class="slide__catalog__btn">В каталог</button>
-        <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
-      </carouselslide>
-    </carousel>
+    <div class="carousel">
 
-  </div>
+      <carousel
+      @nextSlide="nextSlide"
+      @prevSlide="prevSlide"
+      @changeSlide="changeSlide"
+      :visibleSlide="visibleSlide"
+      >
+        <carouselslide v-for="(slide,index) in slides"
+                       :key="slide.img"
+                       :index="index"
+                       :visibleSlide="visibleSlide"
+        >
+          <h1 class="slide__title">{{slide.title}}</h1>
+          <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
+          <div class="slide__round__param">{{slide.param1}}</div>
+          <div class="slide__round__param">{{slide.param2}}</div>
+          <div class="slide__round__param">{{slide.param3}}</div>
+          <div class="slide__round__param">{{slide.param4}}</div>
+          <p class="slide__description">{{slide.description}}</p>
+          <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
+          <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
+          <div class="main__section_wave">
+            <img :src="getImgUrl(slide.wave)" alt="">
+          </div>
+        </carouselslide>
+      </carousel>
+
+    </div>
+
 </template>
 
 
@@ -42,13 +47,13 @@ name: "MainSection",
      slides: [
        {title: 'Навигационные огни',model:'Tricolor RB 2NM',param1:'6nm',param2:'IP67',param3:'360°',param4:'24V',
          description:'В настоящее время в качестве навигационных огней используются электрические фонари, снабженные линзами Френеля и ' +
-             'светофильтрами.',img:'navlights1.png',},
+             'светофильтрами.',img:'navlights1.png',wave:'wave1.svg'},
        {title: 'Палубные светильники',model:'Bunk Side LED Duo-Light',param1:'80Lm',param2:'IP56',param3:'120°',param4:'30V',
          description:'Палубный светильник для морских и речных судов это влагозащищенное осветительное оборудование из ' +
-             'коррозионностойких материалов со степенью защиты не ниже IP56. ',img:'navlights2.png',},
+             'коррозионностойких материалов со степенью защиты не ниже IP56. ',img:'navlights2.png',wave:'wave2.svg'},
        {title: 'Поисковые прожекторы',model:'SL40 R5 Xenon',param1:'9.2км',param2:'IP56',param3:'-40°',param4:'230V',
          description:'Поисковый прожектор это специализированное оборудование, предназначенное для своевременного обнаружения опасностей ' +
-             'при морской навигации. ',img:'navlights3.png',},
+             'при морской навигации. ',img:'navlights3.png',wave:'wave3.svg'},
      ],
       visibleSlide: 0,
     }
@@ -97,6 +102,10 @@ h1{
 p{
   color:#F2F2F2;
 }
+.main__section_wave{
+  width: 100%;
+
+}
 .carousel{
   border: 2px solid #18ffff;
   background-color: white;
@@ -104,7 +113,7 @@ p{
 }
 .slide__model{
   font-family: Montserrat,sans-serif;
-
+  font-size: 30px;
 }
 .slide__img{
   max-width: 800px;
@@ -115,6 +124,8 @@ p{
 }
 .slide__model__name{
   color:#5BC0BE;
+  font-size: 30px;
+  font-weight: bold;
 }
 .slide__round__param{
   color:#F2F2F2;
@@ -127,7 +138,8 @@ p{
   border-radius: 50%;
   line-height: 69px;
   text-align: center;
-
+  display: inline-block;
+  margin: 15px;
   box-shadow: 0 0 5px rgba(112,234,231,0.7);
 }
 .slide__catalog__btn{
