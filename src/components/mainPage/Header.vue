@@ -1,24 +1,16 @@
 <template>
   <header class="header">
     <div class="container">
-
-      <div class="header__inner">  
-
+      <div class="header__inner">
         <svg class="logo">
           <use xlink:href="#logo"></use>
         </svg>
-        
         <div class="header__nav">
           <ul class="header__list">
             <li class="header__item">
-                <a class="header__link" href="#">каталог</a>
-
-            </li>
-            <li class="header__item">
-                <a class="header__link" href="#">компания</a>
-            </li>
-            <li  class="header__item">
-                <a class="header__link" href="#">контакты</a>
+              <router-link class="header__link" v-for="(item, i) in menuItems" :key="`menuItem${i}`" :to="item.route">
+                  {{item.title}}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -27,11 +19,11 @@
 
           <ul class="header__list">
             <li class="header__item-lang">
-              <button id="ru-lang" class="ru-lang-button">ru</button>
+              <button id="ru-lang" class="ru-lang-button">RU</button>
             </li>
-           
+
            <li class="header__item-lang">
-              <button id="eu-lang" class="eu-lang-button">eu</button>
+              <button id="en-lang" class="en-lang-button">EN</button>
             </li>
 
             <li  class="header__item">
@@ -42,18 +34,16 @@
                 </a>
             </li>
             <li  class="header__item">
-                <a class="header__link header__link basket" href="#">
+                <a class="header__link header__link" href="#">
                   <svg class="header__icon header--shopping">
                     <use xlink:href="#shopping"></use>
                   </svg>
-                  <spen class="basket-num">1</spen>
-                </a> 
-               
+                </a>
             </li>
           </ul>
         </div>
 
-      </div> 
+      </div>
 
     </div>
    
@@ -100,6 +90,7 @@ name: "header",
   **************************/
 
   .header {
+<<<<<<< HEAD
     width: 100%;
     height: 20%;
     position: relative;
@@ -107,6 +98,9 @@ name: "header",
    
     padding-top: 30px;
     padding-bottom: 25px;
+=======
+    padding: 25px 0;
+>>>>>>> e76d6c22bff0fe61640f466546e04448da24f1af
     outline: 2px solid blue;
  }
 
@@ -144,14 +138,14 @@ name: "header",
 
   .logo {
     display: block;
-    height: 32px;
-    width: 190px;
+    height: 40px;
+    width: 206px;
     fill: #F2F2F2;
-   
+
     /*outline: 2px solid rgb(217, 255, 0);*/
   }
 
-  /* header__nav 
+  /* header__nav
   **************************/
 
   /*.header__nav {
@@ -163,7 +157,7 @@ name: "header",
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     /*outline: 2px solid red;*/
   }
 
@@ -193,25 +187,21 @@ name: "header",
 
 /* header-menu
 *******************/
-  .header-menu {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 300;
-  }
 
   .header-menu .header__list {
    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     /*outline: 2px solid red;*/
   }
 
-  
-  .header-menu  li:nth-child(3) {
-        margin-left: 7px;
-    }
+  .header-menu {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+  }
 
   .header-menu  .header__link {
     display: block;
@@ -221,23 +211,22 @@ name: "header",
     transition: color .3s;
  }
 
-  .header-menu .header__item + .header__item {
+  .header-menu .header__item  {
       margin-left: 16px;
   }
 
 
-      
+
      /****** button *******/
 
   .header__item-lang {
       padding: 0 8px;
-      color: #f8f8f8;
+      color: #fff;
   }
-  
 
-.header__item-lang  {
+
+.header__item-lang {
   position: relative;
-  
 }
 
 .header__item-lang + .header__item-lang:before {
@@ -245,12 +234,12 @@ name: "header",
 	display: block;
 	position: absolute;
 	top: 4px;
-	left: 0px;
+	left: -1px;
 	width: 1px;
 	border-top: 12px solid #f8f8f8;
 }
- 
-.eu-lang-button,
+
+.en-lang-button,
 .ru-lang-button {
   font-size: 14px;
   padding: 0 4px ;
@@ -260,7 +249,7 @@ name: "header",
 }
 
     /****** button *******/
- 
+
   .header-menu .header--user {
     display: block;
     width: 20px;
@@ -275,10 +264,11 @@ name: "header",
   }
 
   /***** basket-num *****/
-  .basket{
+  .cart{
     position:  relative;
   }
 
+<<<<<<< HEAD
   .basket-num {
     position: absolute;
     bottom: 4px;
@@ -296,6 +286,8 @@ name: "header",
 
 
   }
+=======
+>>>>>>> e76d6c22bff0fe61640f466546e04448da24f1af
 
 
 </style>

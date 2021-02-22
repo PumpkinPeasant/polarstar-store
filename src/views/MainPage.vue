@@ -1,8 +1,8 @@
 <template>
   <v-main id="v-main" fluid>
-    <Header/>
-    <v-divider dark id="menu-divider"></v-divider>
-    <mainsection></mainsection>
+    <Header id="header"/>
+    <v-divider dark id="menu__divider"></v-divider>
+    <mainsection id="mainSection"></mainsection>
 
     <Footer/>
   </v-main>
@@ -24,8 +24,16 @@ export default {
 
 <style scoped>
 
-#v-main {
+#mainSection {
+  padding-top: 90px;
   background: radial-gradient(#1C2541, #0B132B);
+}
+#v-main{
+  background-color: lightblue;
+}
+#header{
+  position: absolute;
+  width: 100%;
 }
 
 /**

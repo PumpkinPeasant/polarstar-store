@@ -21,7 +21,14 @@ export default {
 </script>
 
 <style>
-
+@font-face {
+  font-family: "Jost";
+  src: url("/assets/fonts/Jost.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Jost-Regular";
+  src: url("/assets/fonts/Jost-Regular.ttf") format("ttf");
+}
   body {
     margin: 0;
     padding: 0;
