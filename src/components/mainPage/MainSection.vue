@@ -13,18 +13,29 @@
                        :index="index"
                        :visibleSlide="visibleSlide"
         >
+          <div class="slide__block">   
+
             <h1 class="slide__title">{{slide.title}}</h1>
             <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
-            <div class="slide__round__param">{{slide.param1}}</div>
-            <div class="slide__round__param">{{slide.param2}}</div>
-            <div class="slide__round__param">{{slide.param3}}</div>
-            <div class="slide__round__param">{{slide.param4}}</div>
+
+            <div class="slide__round">
+              <div class="slide__round__param">{{slide.param1}}</div>
+              <div class="slide__round__param">{{slide.param2}}</div>
+              <div class="slide__round__param">{{slide.param3}}</div>
+              <div class="slide__round__param">{{slide.param4}}</div>
+            </div>
+
             <p class="slide__description">{{slide.description}}</p>
             <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
+
+          </div>
+
             <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
-           <div class="main__section_wave">
+
+            <!--<div class="main__section_wave">
               <img :src="getImgUrl(slide.wave)" alt="">
-             </div>
+             </div>-->
+
           </carouselslide>
         </carousel>
 
@@ -108,7 +119,7 @@ h1{
   font-weight: normal;
   font-size: 64px;
   letter-spacing: -0.03em;
-  line-height: 84.4%;
+  line-height:  60px;
   margin-bottom: 48px;
   outline: 2px solid black;
 }
@@ -122,6 +133,8 @@ p{
 .slide__model{
   font-family: Montserrat,sans-serif;
   font-size: 30px;
+
+  outline: 2px solid black;
 }
 .slide__img{
   
@@ -132,7 +145,7 @@ p{
   /***** slide__round  *****/
 
 .slide__round {
-
+  outline: 2px solid black;
 }
 
 .slide__model__name{
@@ -154,17 +167,17 @@ p{
   line-height: 60px;
   text-align: center;
   display: inline-block;
-  margin: 15px;
   box-shadow: 0 0 5px rgba(112,234,231,0.7);
 }
 
 .slide__round__param + .slide__round__param {
-   margin-left: 15px;
+   margin-left: 36px;
 }
 
 .slide__description {
   font-size: 18px;
   font-weight: 300;
+  outline: 2px solid black;
 }
 
 .slide__catalog__btn{
