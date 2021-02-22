@@ -21,18 +21,19 @@
               <div class="slide__block"> 
                 <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
 
-                <div class="slide__round">
-                  <div class="slide__round__param">{{slide.param1}}</div>
-                  <div class="slide__round__param">{{slide.param2}}</div>
-                  <div class="slide__round__param">{{slide.param3}}</div>
-                  <div class="slide__round__param">{{slide.param4}}</div>
-                </div>
+                <div class="slide__inner">
+                  <div class="slide__round">
+                    <div class="slide__round__param">{{slide.param1}}</div>
+                    <div class="slide__round__param">{{slide.param2}}</div>
+                    <div class="slide__round__param">{{slide.param3}}</div>
+                    <div class="slide__round__param">{{slide.param4}}</div>
+                  </div>
 
-           
-              <p class="slide__description">{{slide.description}}</p>
-              <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
-            </div>
-        
+            
+                  <p class="slide__description">{{slide.description}}</p>
+                  <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
+                </div>
+               </div>
 
             <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
            </div>
@@ -133,6 +134,7 @@ h1{
 }
 
 .slide__text{
+   display: flex;
    outline: 8px solid green;
 }
 
@@ -148,17 +150,24 @@ p{
 
   outline: 2px solid black;
 }
-.slide__img{
-  
-  max-width: 600px;
-  max-height: 500px;
-}
 
 .slide__block {
-
+  
   outline: 5px solid yellow;
 }
 
+.slide__img{
+  display: block;
+  margin-left: 80px;
+  max-width: 560px;
+  max-height: 500px;
+}
+
+
+.slide__inner {
+  width:360px;
+   outline: 5px solid rgb(83, 10, 151);
+}
 
   /***** slide__round  *****/
 
