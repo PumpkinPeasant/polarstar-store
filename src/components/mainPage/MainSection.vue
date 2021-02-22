@@ -1,4 +1,5 @@
 <template>
+<<<<<<< Updated upstream
     <div class="carousel">
 
       <carousel
@@ -29,6 +30,51 @@
 
     </div>
 
+=======
+   <section class="carousel">
+    <div class="container">
+
+      <carousel  class="slider"
+        @nextSlide="nextSlide"
+        @prevSlide="prevSlide"
+        @changeSlide="changeSlide"
+        :visibleSlide="visibleSlide"
+        >
+        <carouselslide class="slider__block" v-for="(slide,index) in slides"
+                      :key="slide.img"
+                      :index="index"
+                      :visibleSlide="visibleSlide"
+        >
+
+        <div  class="slide">
+
+          <h1 class="slide__title">{{slide.title}}</h1>
+          <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
+
+          <div class="slide__inner">
+
+            <div class="slide__round">
+              <div class="slide__round__param">{{slide.param1}}</div>
+              <div class="slide__round__param">{{slide.param2}}</div>
+              <div class="slide__round__param">{{slide.param3}}</div>
+              <div class="slide__round__param">{{slide.param4}}</div>
+            </div>
+
+            <p class="slide__description">{{slide.description}}</p>
+            <button class="slide__catalog__btn">В каталог</button>
+
+          </div>
+
+        </div>
+
+          <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
+        </carouselslide>
+
+      </carousel>
+
+    </div>
+  </section>
+>>>>>>> Stashed changes
 </template>
 
 
@@ -91,17 +137,45 @@ name: "MainSection",
 </script>
 
 <style scoped>
+
+.carousel{
+  background-color: white;
+  overflow: hidden;
+}
+
+.container {
+  outline: 2px solid green;
+}
+
+.slider {
+  padding-top: 35px;
+  position: relative;
+
+  outline: 2px solid red;
+}
+
+.slider__block {
+  display: flex;
+  outline: 2px solid yellow;
+}
+
+
 h1{
   color:#F2F2F2;
   font-family: Jost,sans-serif;
   font-weight: normal;
-  font-size: 96px;
+  font-size: 64px;
   letter-spacing: -0.03em;
   line-height: 84.4%;
+  margin-bottom: 48px;
+  outline: 2px solid black;
 }
+
 p{
   color:#F2F2F2;
+  font-size: 23px;
 }
+<<<<<<< Updated upstream
 .main__section_wave{
   width: 100%;
 
@@ -110,38 +184,65 @@ p{
   border: 2px solid #18ffff;
   background-color: white;
   overflow: hidden;
+=======
+
+.slide__inner {
+  width: 320px;
+  outline: 2px solid black;
+>>>>>>> Stashed changes
 }
+
 .slide__model{
   font-family: Montserrat,sans-serif;
   font-size: 30px;
 }
 .slide__img{
-  max-width: 800px;
+  position: absolute;
+  top: 130px;
+  right: -10px;
+  z-index: 1;
+  max-width: 600px;
   max-height: 500px;
 }
-.slide__title{
 
+  /***** slide__round  *****/
+
+.slide__round {
+  display: flex;
 }
+
 .slide__model__name{
   color:#5BC0BE;
   font-size: 30px;
   font-weight: bold;
 }
-.slide__round__param{
+
+.slide__round__param {
+ 
   color:#F2F2F2;
   font-family: Montserrat,sans-serif;
   font-size: 16px;
   font-weight: bold;
-  width: 69px;
-  height: 69px;
+  width: 60px;
+  height: 60px;
   border: 1px solid #5BC0BE;
   border-radius: 50%;
-  line-height: 69px;
+  line-height: 60px;
   text-align: center;
   display: inline-block;
   margin: 15px;
   box-shadow: 0 0 5px rgba(112,234,231,0.7);
 }
+
+.slide__round__param + .slide__round__param {
+   margin-left: 15px;
+}
+
+.slide__description {
+  font-size: 18px;
+  font-weight: 300;
+}
+
 .slide__catalog__btn{
   background-color: #F2F2F2;
   font-family: Montserrat,sans-serif;

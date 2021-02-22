@@ -1,10 +1,13 @@
 <template>
   <header class="header">
     <div class="container">
+
       <div class="header__inner">
+
         <svg class="logo">
           <use xlink:href="#logo"></use>
         </svg>
+
         <div class="header__nav">
           <ul class="header__list">
             <li class="header__item">
@@ -34,11 +37,11 @@
                 </router-link>
             </li>
             <li  class="header__item">
-                <a class="header__link basket" href="#">
+                <a class="header__link  header__link basket" href="#">
                   <svg class="header__icon header--shopping">
                     <use xlink:href="#shopping"></use>
                   </svg>
-                  <div class="basket-num"></div>
+                  <div class="basket-num">1</div>
                 </a>
             </li>
           </ul>
@@ -160,7 +163,7 @@ name: "header",
     /*outline: 2px solid red;*/
   }
 
-  .header__item {
+  .header__nav  .header__item {
     display: inline-block;
     font-size: 12px;
     font-weight: 400;
@@ -270,11 +273,11 @@ name: "header",
   .basket-num {
     position: absolute;
     bottom: 4px;
-    right: -2px;
+    right: 15px;
     width: 14px;
     height: 14px;
     color: #000;
-    padding-left: 4px;
+    padding-left: 1px;
     background: #5BC0BE;
     font-size: 9px;
     text-align: center;
