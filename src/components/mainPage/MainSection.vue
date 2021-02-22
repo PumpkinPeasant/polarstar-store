@@ -2,7 +2,7 @@
     <section class="carousel">
       <div class="container">
 
-        <carousel
+        <carousel class="main__slide"
         @nextSlide="nextSlide"
         @prevSlide="prevSlide"
         @changeSlide="changeSlide"
@@ -35,7 +35,7 @@
                 </div>
                </div>
 
-            <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
+              <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
            </div>
             <!--<div class="main__section_wave">
               <img :src="getImgUrl(slide.wave)" alt="">
@@ -52,6 +52,7 @@
 
 
 <script>
+
 import carousel from '@/components/mainPage/Carousel';
 import carouselslide from '@/components/mainPage/CarouselSlide';
 
@@ -111,6 +112,10 @@ name: "MainSection",
 
 <style scoped>
 
+.main__slide {
+ position: relative;
+}
+
 .carousel {
   background-color: white;
   overflow: hidden;
@@ -143,6 +148,7 @@ p{
   color:#F2F2F2;
   font-size: 23px;
 }
+
 
 
 .slide__model {
@@ -178,6 +184,7 @@ p{
   /***** slide__round  *****/
 
 .slide__round {
+  margin-bottom: 40px;
   outline: 2px solid black;
 }
 
@@ -191,26 +198,27 @@ p{
  
   color:#F2F2F2;
   font-family: Montserrat,sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #5BC0BE;
   border-radius: 50%;
-  line-height: 60px;
+  line-height:  50px;
   text-align: center;
   display: inline-block;
   box-shadow: 0 0 5px rgba(112,234,231,0.7);
 }
 
 .slide__round__param + .slide__round__param {
-   margin-left: 36px;
+   margin-left: 20px;
 }
 
 .slide__description {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 200;
   outline: 2px solid black;
+  margin-bottom: 40px;
 }
 
 .slide__catalog__btn{
