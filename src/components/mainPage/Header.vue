@@ -27,14 +27,14 @@
             </li>
 
             <li  class="header__item">
-              <a class="header__link header__link" href="#">
+              <router-link class="header__link header__link" :to="'/login'">
                    <svg class="header__icon header--user">
                       <use xlink:href="#user"></use>
                    </svg>
-                </a>
+                </router-link>
             </li>
             <li  class="header__item">
-                <a class="header__link header__link" href="#">
+                <a class="header__link header__link" @click="toggleCart = true">
                   <svg class="header__icon header--shopping">
                     <use xlink:href="#shopping"></use>
                   </svg>
@@ -59,6 +59,7 @@ name: "header",
   data () {
     return {
       toggle_lang: [],
+      toggleCart:false,
     }
   },
   components: {

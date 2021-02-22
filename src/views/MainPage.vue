@@ -5,6 +5,7 @@
     <main-section id="mainSection">
     </main-section>
     <about-section id="aboutSection"></about-section>
+    <cart-sidebar></cart-sidebar>
     <Footer/>
   </v-main>
 </template>
@@ -14,13 +15,15 @@ import Header from '@/components/mainPage/Header';
 import Footer from '@/components/mainPage/Footer';
 import MainSection from '@/components/mainPage/MainSection';
 import AboutSection from "@/components/mainPage/AboutSection";
+import CartSidebar from "@/components/mainPage/CartSidebar";
 export default {
   name: "MainPage",
   components: {
     AboutSection,
     Header,
     Footer,
-    MainSection
+    MainSection,
+    CartSidebar
   },
 }
 </script>
