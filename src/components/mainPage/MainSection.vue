@@ -28,8 +28,9 @@
                   <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
                 </div>
                </div>
-
+            <div class="rrr">
               <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
+            </div>  
            </div>
             <!--<div class="main__section_wave">
               <img :src="getImgUrl(slide.wave)" alt="">
@@ -118,7 +119,7 @@ name: "MainSection",
 
 .slide {
   padding-top: 40px;
-   outline: 2px solid red;
+   padding-bottom: 40px;
 }
 
 
@@ -130,12 +131,10 @@ h1{
   letter-spacing: -0.03em;
   line-height:  60px;
   margin-bottom: 48px;
-  outline: 2px solid black;
 }
 
 .slide__text{
    display: flex;
-   outline: 8px solid green;
 }
 
 p{
@@ -149,37 +148,36 @@ p{
   font-family: Montserrat, sans-serif;
   font-weight: 100;
   font-size: 25px;
-
-  outline: 2px solid black;
 }
 
 .slide__model  span {
   font-size: 20px;
 }
 
-.slide__block {
-
-  outline: 5px solid yellow;
+.rrr{
+    position: relative;
+  
 }
 
 .slide__img{
-  display: block;
-  margin-left: 60px;
+  position: relative;
+  right: -240px;
   max-width: 560px;
   max-height: 500px;
+
+   background-repeat: no-repeat;
+ 
 }
 
 
 .slide__inner {
-  width:360px;
-   outline: 5px solid rgb(83, 10, 151);
+  width: 400px;
 }
 
   /***** slide__round  *****/
 
 .slide__round {
   margin-bottom: 40px;
-  outline: 2px solid black;
 }
 
 .slide__model__name{
@@ -193,14 +191,13 @@ p{
   font-family: Montserrat,sans-serif;
   font-size: 16px;
   font-weight: bold;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border: 1px solid #5BC0BE;
   border-radius: 50%;
-  line-height: 60px;
+  line-height: 70px;
   text-align: center;
   display: inline-block;
-  margin: 15px;
   box-shadow: 0 0 5px rgba(112,234,231,0.7);
 }
 
@@ -209,9 +206,8 @@ p{
 }
 
 .slide__description {
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 200;
-  outline: 2px solid black;
   margin-bottom: 40px;
 }
 

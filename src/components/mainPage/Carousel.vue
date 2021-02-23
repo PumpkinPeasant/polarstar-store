@@ -43,11 +43,9 @@ name: "MainLayout",
   .previous{
     position: absolute;
     width: 80px;
-    height: 80px;
-    top: 33px;
-   
-   
-    outline: 5px solid rebeccapurple;
+    bottom: 33px;
+    left: 440px;
+    /*outline: 5px solid rebeccapurple;*/
   }
 
   input {

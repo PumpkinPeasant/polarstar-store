@@ -101,7 +101,6 @@ name: "header",
 
     padding-top: 30px;
     padding-bottom: 25px;
-    outline: 1px solid red;
  }
 
 
@@ -123,7 +122,7 @@ name: "header",
       display: block;
       left: -120px;
       bottom: -19px;
-      width: 1200px;
+      width: 1500px;
       outline:  1px solid #212D51;
   }
 
