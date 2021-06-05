@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib/framework';
 import ru from 'vuetify/src/locale/ru.ts';
-//import {preset} from 'vuetify/src/presets/default/index.ts';
 
 Vue.use(Vuetify);
 

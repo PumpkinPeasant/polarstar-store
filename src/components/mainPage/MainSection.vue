@@ -142,11 +142,12 @@ p{
 
 .productModel {
   font-family: Montserrat, sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 25px;
 }
 
 .productModel  span {
+  font-weight: 500;
   font-size: 20px;
 }
 
@@ -196,16 +197,15 @@ p{
 }
 
 .productText {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   font-size: 18px;
-  font-weight: 200;
   margin-bottom: 40px;
 }
 
 .catalogButton{
   display: flex;
   background-color: #F2F2F2;
-  font-family: Montserrat,sans-serif;
-  font-weight: bold;
   font-size: 18px;
   color: #0B132B;
   padding: 10px 35px;
@@ -215,6 +215,8 @@ p{
   justify-content: center;
   transition: 0.3s;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 .catalogButton:hover{
   color: #F2F2F2;
