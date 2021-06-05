@@ -1,7 +1,7 @@
 <template>
-    <section class="carousel">
+    <section class="mainSection">
 
-      <carousel class="main__slide"
+      <carousel class="visibleSlide"
         @nextSlide="nextSlide"
         @prevSlide="prevSlide"
         @changeSlide="changeSlide"
@@ -12,24 +12,22 @@
                        :index="index"
                        :visibleSlide="visibleSlide"
         >
-            <h1 class="slide__title">{{slide.title}}</h1>
-            <div class="slide__text">
-              <div class="slide__block">
-                <p class="slide__model">Модель <span class="slide__model__name">{{slide.model}}</span></p>
-                <div class="slide__inner">
-                  <div class="slide__round">
-                    <div class="slide__round__param">{{slide.param1}}</div>
-                    <div class="slide__round__param">{{slide.param2}}</div>
-                    <div class="slide__round__param">{{slide.param3}}</div>
-                    <div class="slide__round__param">{{slide.param4}}</div>
+            <h1 class="slideTitle">{{slide.title}}</h1>
+            <div class="slideContent">
+              <div class="slideSideInformation">
+                <p class="productModel">Модель <span class="slide__model__name">{{slide.model}}</span></p>
+                  <div class="productRoundParameters">
+                    <div class="productParameter">{{slide.param1}}</div>
+                    <div class="productParameter">{{slide.param2}}</div>
+                    <div class="productParameter">{{slide.param3}}</div>
+                    <div class="productParameter">{{slide.param4}}</div>
                   </div>
-                  <p class="slide__description">{{slide.description}}</p>
-                  <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
-                </div>
+                  <p class="productText">{{slide.description}}</p>
+                  <div class="catalogButton" @click="$router.push('/catalog')">В каталог</div>
                </div>
-              <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
+              <img class="slideImage" :src="getImgUrl(slide.img)" :alt="slide"/>
            </div>
-          <div class="main__section_wave">
+          <div class="slideWave">
             <img :src="getImgUrl(slide.wave)" alt="">
           </div>
         </carouselslide>
@@ -101,22 +99,22 @@ name: "MainSection",
 
 <style scoped>
 
-.carousel{
+.mainSection{
   display: flex;
-  padding: 10vh 0;
   width: 100%;
   height: 100vh;
-  justify-content: space-around;
+
 }
 
-.main__slide {
- position: relative;
+.visibleSlide {
+  z-index: 1;
 }
 .slide {
   display: flex;
   flex-direction: column;
-  padding: 40px 0;
-  width: 100%;
+  padding: 12vh 0 0 0;
+  border: red 3px solid;
+
 }
 
 
@@ -128,12 +126,11 @@ h1{
   letter-spacing: -0.03em;
   line-height:  60px;
   margin-bottom: 48px;
-  outline: 2px solid black;
+
 }
 
-.slide__text{
+.slideContent{
    display: flex;
-   outline: 8px solid green;
 }
 
 p{
@@ -143,26 +140,23 @@ p{
 
 
 
-.slide__model {
+.productModel {
   font-family: Montserrat, sans-serif;
   font-weight: 100;
   font-size: 25px;
-
-  outline: 2px solid black;
 }
 
-.slide__model  span {
+.productModel  span {
   font-size: 20px;
 }
 
-.slide__block {
-
+.slideSideInformation {
   outline: 5px solid yellow;
+
 }
 
-.slide__img{
+.slideImage{
   display: block;
-  margin-left: 60px;
   max-width: 560px;
   max-height: 500px;
 }
@@ -170,14 +164,13 @@ p{
 
 .slide__inner {
   width:360px;
-   outline: 5px solid rgb(83, 10, 151);
+  outline: 5px solid rgb(83, 10, 151);
 }
 
   /***** slide__round  *****/
 
-.slide__round {
+.productRoundParameters {
   margin-bottom: 40px;
-  outline: 2px solid black;
 }
 
 .slide__model__name{
@@ -186,7 +179,7 @@ p{
   font-weight: bold;
 }
 
-.slide__round__param {
+.productParameter {
   color:#F2F2F2;
   font-family: Montserrat,sans-serif;
   font-size: 16px;
@@ -202,18 +195,17 @@ p{
   box-shadow: 0 0 5px rgba(112,234,231,0.7);
 }
 
-.slide__round__param + .slide__round__param {
+.productParameter + .productParameter {
    margin-left: 20px;
 }
 
-.slide__description {
+.productText {
   font-size: 18px;
   font-weight: 200;
-  outline: 2px solid black;
   margin-bottom: 40px;
 }
 
-.slide__catalog__btn{
+.catalogButton{
   background-color: #F2F2F2;
   font-family: Montserrat,sans-serif;
   font-weight: bold;
@@ -223,8 +215,11 @@ p{
   border-radius: 7px;
   box-shadow: 0 0 9px rgba(112,234,231,0.7);
 }
-.main__section_wave{
-
-  width: 100%;
+.slideWave{
+  position: absolute;
+  width: 100vw;
+  right: 0;
+  top:64vh;
+  z-index: -1;
 }
 </style>

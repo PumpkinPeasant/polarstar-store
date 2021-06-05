@@ -1,7 +1,7 @@
 <template>
-  <div v-show="visibleSlide === index" class="carousel__slide">
+  <v-col cols="10" v-show="visibleSlide === index" class="carouselSlide">
     <slot></slot>
-  </div>
+  </v-col>
 </template>
 
 <script>
