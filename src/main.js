@@ -9,6 +9,7 @@ Vue.config.productionTip = false
 
 
 import '@/assets/styles/main.scss';
+import '@mdi/font/css/materialdesignicons.css'
 
 Vue.use(VueScrollTo, {
   container: "body",

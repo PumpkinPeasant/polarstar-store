@@ -37,11 +37,9 @@
                 EN
               </v-btn>
             </v-btn-toggle>
+      <login-dialog/>
       <v-btn icon color="#5BC0BE">
-        <v-icon>mdi-account-outline</v-icon>
-      </v-btn>
-      <v-btn icon color="#5BC0BE">
-        <v-icon>mdi-account-outline</v-icon>
+        <v-icon>mdi-cart-outline</v-icon>
       </v-btn>
     </div>
   </nav>
@@ -49,8 +47,10 @@
 
 <script>
 
+import LoginDialog from "@/components/dialogs/LoginDialog";
 export default {
   name: "MainNavigation",
+  components: {LoginDialog},
   props:['menuItems','background'],
   data(){
     return{
