@@ -1,15 +1,16 @@
 <template>
   <div>
-    <slot>
-
-    </slot>
-   <!-- <v-btn class="previous" @click="prevSlide">Previous</v-btn>-->
-    <div class="previous">
-      <input type="radio" name="slides" id="slide1" @change="changeSlide(0)" :checked="visibleSlide===0">
-      <input type="radio" name="slides" id="slide2" @change="changeSlide(1)" :checked="visibleSlide===1">
-      <input type="radio" name="slides" id="slide3" @change="changeSlide(2)" :checked="visibleSlide===2">
+    <div class="carouselNavigation">
+      <v-col cols="1" class="btnPrevious" @click="prevSlide">Previous</v-col>
+      <v-col cols="10" class="previous">
+        <slot></slot>
+        <input type="radio" name="slides" id="slide1" @change="changeSlide(0)" :checked="visibleSlide===0">
+        <input type="radio" name="slides" id="slide2" @change="changeSlide(1)" :checked="visibleSlide===1">
+        <input type="radio" name="slides" id="slide3" @change="changeSlide(2)" :checked="visibleSlide===2">
+      </v-col>
+      <v-col cols="1" class="btnNext" @click="nextSlide">Next</v-col>
     </div>
-   <!-- <v-btn class="next" @click="nextSlide">Next</v-btn>-->
+
   </div>
 </template>
 
@@ -39,17 +40,21 @@ name: "MainLayout",
 }
 </script>
 
-<style>
-  .previous{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    top: 33px;
-   
-   
-    outline: 5px solid rebeccapurple;
-  }
+<style lang="scss" scoped>
+.carouselNavigation{
+  display: flex;
+  justify-content: space-between;
+  border: #18ffff 2px solid;
+  height: 100%;
+}
 
+.btnNext, .btnPrevious{
+    color: white;
+    width: 8vw;
+  }
+.btnNext, .btnPrevious:hover{
+  background-color: rgba(0,0,0,0.6);
+}
   input {
     margin-right: 10px;
   }

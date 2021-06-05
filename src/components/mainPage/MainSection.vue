@@ -1,8 +1,7 @@
 <template>
     <section class="carousel">
-      <div class="container">
 
-        <carousel class="main__slide"
+      <carousel class="main__slide"
         @nextSlide="nextSlide"
         @prevSlide="prevSlide"
         @changeSlide="changeSlide"
@@ -28,18 +27,14 @@
                   <button class="slide__catalog__btn" @click="$router.push('/catalog')">В каталог</button>
                 </div>
                </div>
-
               <img class="slide__img" :src="getImgUrl(slide.img)" :alt="slide"/>
            </div>
-            <!--<div class="main__section_wave">
-              <img :src="getImgUrl(slide.wave)" alt="">
-             </div>-->
+          <div class="main__section_wave">
+            <img :src="getImgUrl(slide.wave)" alt="">
+          </div>
+        </carouselslide>
 
-          </carouselslide>
-        </carousel>
-
-
-       </div>
+      </carousel>
 
     </section>
 
@@ -106,19 +101,22 @@ name: "MainSection",
 
 <style scoped>
 
+.carousel{
+  display: flex;
+  padding: 10vh 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+}
+
 .main__slide {
  position: relative;
 }
-
-.carousel {
-  background-color: white;
-  overflow: hidden;
-}
-
-
 .slide {
-  padding-top: 40px;
-   outline: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+  width: 100%;
 }
 
 
@@ -226,6 +224,7 @@ p{
   box-shadow: 0 0 9px rgba(112,234,231,0.7);
 }
 .main__section_wave{
+
   width: 100%;
 }
 </style>

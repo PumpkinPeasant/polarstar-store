@@ -1,6 +1,6 @@
 <template>
   <v-main id="v-main" fluid>
-    <Header id="header"/>
+    <navigation/>
     <v-divider dark id="menu__divider"></v-divider>
     <main-section id="mainSection">
     </main-section>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Header from '@/components/mainPage/Header';
+import Navigation from '@/components/mainPage/Navigation';
 import Footer from '@/components/mainPage/Footer';
 import MainSection from '@/components/mainPage/MainSection';
 import AboutSection from "@/components/mainPage/AboutSection";
@@ -20,7 +20,7 @@ export default {
   name: "MainPage",
   components: {
     AboutSection,
-    Header,
+    Navigation,
     Footer,
     MainSection,
     CartSidebar
@@ -31,7 +31,6 @@ export default {
 <style scoped>
 
 #mainSection {
-  padding-top: 90px;
   background: radial-gradient(#1C2541, #0B132B);
 }
 
@@ -44,10 +43,7 @@ export default {
 #v-main{
   background-color: lightblue;
 }
-#header{
-  position: absolute;
-  width: 100%;
-}
+
 
 /**
 #menu-divider{

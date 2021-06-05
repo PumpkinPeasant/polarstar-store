@@ -35,6 +35,13 @@ name: "AboutSection"
 </script>
 
 <style scoped>
+.about__section{
+  display: flex;
+  padding: 10vh;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
 h1{
   font-family: Jost,sans-serif;
   color: #5BC0BE;

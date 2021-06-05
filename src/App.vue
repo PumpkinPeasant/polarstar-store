@@ -52,19 +52,4 @@ export default {
     margin: 0;
   }
 
-  /* container
-  **********************/
-
-  .container {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 15px;
-
-    /*outline: 2px solid green;*/
-  }
-
-
-
-
 </style>
