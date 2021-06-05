@@ -25,7 +25,9 @@
                   <p class="productText">{{slide.description}}</p>
                   <div class="catalogButton" @click="$router.push('/catalog')">В каталог</div>
                </div>
-              <img class="slideImage" :src="getImgUrl(slide.img)" :alt="slide"/>
+              <div class="slideImageDiv">
+                <img class="slideImage" :src="getImgUrl(slide.img)" :alt="slide"/>
+              </div>
            </div>
           <div class="slideWave">
             <img :src="getImgUrl(slide.wave)" alt="">
@@ -112,26 +114,24 @@ name: "MainSection",
 .slide {
   display: flex;
   flex-direction: column;
-  padding: 12vh 0 0 0;
-  border: red 3px solid;
-
+  padding: 18vh 0 0 0;
 }
-
+.slideContent{
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  padding: 5vh 0 0 0;
+}
 
 h1{
   color:#F2F2F2;
   font-family: Jost,sans-serif;
   font-weight: normal;
-  font-size: 64px;
+  font-size: 10vh;
   letter-spacing: -0.03em;
   line-height:  60px;
-  margin-bottom: 48px;
-
 }
 
-.slideContent{
-   display: flex;
-}
+
 
 p{
   color:#F2F2F2;
@@ -151,23 +151,19 @@ p{
 }
 
 .slideSideInformation {
-  outline: 5px solid yellow;
 
 }
-
+.slideImageDiv{
+  display: flex;
+  justify-content: center;
+}
 .slideImage{
   display: block;
-  max-width: 560px;
-  max-height: 500px;
+  max-height: 55vh;
 }
 
 
-.slide__inner {
-  width:360px;
-  outline: 5px solid rgb(83, 10, 151);
-}
 
-  /***** slide__round  *****/
 
 .productRoundParameters {
   margin-bottom: 40px;
@@ -206,20 +202,30 @@ p{
 }
 
 .catalogButton{
+  display: flex;
   background-color: #F2F2F2;
   font-family: Montserrat,sans-serif;
   font-weight: bold;
   font-size: 18px;
   color: #0B132B;
   padding: 10px 35px;
+  width: 12vw;
   border-radius: 7px;
   box-shadow: 0 0 9px rgba(112,234,231,0.7);
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.catalogButton:hover{
+  color: #F2F2F2;
+  background-color: #0B132B;
+  box-shadow: 0 0 9px rgba(11, 19, 43, 0.7);
 }
 .slideWave{
   position: absolute;
   width: 100vw;
   right: 0;
-  top:64vh;
   z-index: -1;
+  top: 60vh;
 }
 </style>

@@ -93,7 +93,7 @@ nav{
   left: 0;
   align-items: center;
   transition: 0.6s;
-  padding: 40px 8vw;
+  padding: 40px 9vw;
   z-index: 100000;
   .navItems{
     display: flex;
