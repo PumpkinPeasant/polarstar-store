@@ -47,9 +47,7 @@
               </v-btn>
             </v-btn-toggle>
       <login-dialog/>
-      <v-btn icon color="#F2F2F2">
-        <v-icon>mdi-cart-outline</v-icon>
-      </v-btn>
+      <cart-dialog/>
     </div>
   </nav>
 </template>
@@ -57,10 +55,11 @@
 <script>
 
 import LoginDialog from "@/components/dialogs/LoginDialog";
+import CartDialog from "@/components/dialogs/CartDialog";
 export default {
   name: "MainNavigation",
-  components: {LoginDialog},
-  props:['menuItems','background'],
+  components: {LoginDialog,
+  CartDialog},
   data(){
     return{
       navClass:'',

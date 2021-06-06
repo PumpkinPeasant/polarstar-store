@@ -29,7 +29,8 @@
               <v-window-item :value="1">
                 <v-card-title class="justify-center">Вход в личный кабинет</v-card-title>
                 <v-card-text class="placeholder-color">
-                  <v-text-field background-color="#1C2541" color="#6C7797" filled placeholder="Номер телефона или E-mail"
+                  <v-text-field background-color="#1C2541" color="#6C7797" filled
+                                placeholder="Номер телефона или E-mail"
                                 type="email" prepend-inner-icon="mdi-account-outline">
                   </v-text-field>
                   <v-text-field background-color="#1C2541" color="#6C7797" filled placeholder="Пароль"
@@ -65,22 +66,22 @@
               <v-window-item :value="2">
                 <v-card-title class="justify-center">Регистрация</v-card-title>
                 <v-card-text class="placeholder-color">
-                  <v-text-field background-color="#1C2541" color="#6C7797" filled placeholder="Имя"
+                  <v-text-field v-model="registerUser.name" background-color="#1C2541" color="#6C7797" filled placeholder="Имя"
                                 type="name" prepend-inner-icon="mdi-account-outline">
                   </v-text-field>
-                  <v-text-field background-color="#1C2541" color="#6C7797" filled placeholder="Фамилия"
+                  <v-text-field v-model="registerUser.surname" background-color="#1C2541" color="#6C7797" filled placeholder="Фамилия"
                                 type="surname" prepend-inner-icon="mdi-account-outline">
                   </v-text-field>
-                  <v-text-field background-color="#1C2541" color="#6C7797" filled placeholder="E-mail"
+                  <v-text-field v-model="registerUser.email" background-color="#1C2541" color="#6C7797" filled placeholder="E-mail"
                                 type="email" prepend-inner-icon="mdi-account-outline">
                   </v-text-field>
-                  <v-text-field background-color="#1C2541" color="#6C7797" filled placeholder="Пароль"
+                  <v-text-field v-model="registerUser.password" background-color="#1C2541" color="#6C7797" filled placeholder="Пароль"
                                 type="password" prepend-inner-icon="mdi-lock-outline">
                   </v-text-field>
                 </v-card-text>
                 <v-card-actions class="loginActions">
                   <div>
-                    <a class="justify-center" id="registerButton">
+                    <a class="justify-center" id="registerButton" @click="signUp">
                       <span></span>
                       <span></span>
                       <span></span>
@@ -122,46 +123,48 @@ export default {
         (v) => !!v || 'Пожалуйста введите имя',
         (v) => (v && v.length >= 2) || 'Имя должно состоять как минимум из двух символов'
       ],
-      countries:[],
-      genders:[],
+      countries: [],
+      genders: [],
       player: [],
-      error:'',
-      registerUser:{
+      error: '',
+      registerUser: {
         name: '',
-        gender: '',
-        birth_date: '',
-        country: '',
+        surname: '',
         email: '',
         password: '',
       },
-      loginUser:{
+      loginUser: {
         email: '',
         password: '',
       },
     }
   },
-  mounted() {
-
-  },
-  methods:{
-
+  methods: {
+    signUp() {
+      this.$store.dispatch('SIGN_UP', this.registerUser).catch()
+    },
+    signIn() {
+      this.$store.dispatch('SIGN_IN', this.loginUser).catch()
     }
+  }
 }
 </script>
 
 <style lang="scss">
-.loginBackground{
+.loginBackground {
   height: 100%;
   background: linear-gradient(#0B132B, #1C2645) fixed;
   background-size: cover;
 }
-.closeLoginForm{
+
+.closeLoginForm {
   position: fixed;
   padding: 1vw;
   right: 0;
   top: 0;
 }
-.loginWaveAndButtons{
+
+.loginWaveAndButtons {
   background: url("../../assets/images/loginDialog/loginWave.svg") fixed;
   background-size: cover;
   height: 100%;
@@ -171,9 +174,11 @@ export default {
   justify-content: center;
   gap: 4vh;
 }
-.loginRegisterButtons{
+
+.loginRegisterButtons {
   color: #5BC0BE;
-  span{
+
+  span {
     text-transform: uppercase;
     padding: 1vw;
     cursor: pointer;
@@ -183,31 +188,37 @@ export default {
     font-size: 1vw;
     letter-spacing: .11em;
   }
-  span:hover{
+
+  span:hover {
     text-shadow: 0 0 10px #ffffff;
   }
 }
-.loginWrapper{
+
+.loginWrapper {
   background: url("../../assets/images/loginDialog/loginWave.svg") fixed;
   background-size: cover;
   display: flex;
   align-items: center;
 }
+
 .login {
   width: 35.6vw;
   background-color: #0B132B !important;
   color: #F2F2F2 !important;
   padding: 6vh 2vw;
-  .v-card__title{
+
+  .v-card__title {
     font-family: Jost, sans-serif;
     font-weight: 300;
     font-size: 2vw;
     padding-bottom: 6vh;
   }
-  .loginActions{
+
+  .loginActions {
     display: flex;
     flex-direction: column;
   }
+
   .loginActions a {
     position: relative;
     display: inline-block;
@@ -252,7 +263,7 @@ export default {
     0% {
       left: -100%;
     }
-    50%,100% {
+    50%, 100% {
       left: 100%;
     }
   }
@@ -271,7 +282,7 @@ export default {
     0% {
       top: -100%;
     }
-    50%,100% {
+    50%, 100% {
       top: 100%;
     }
   }
@@ -290,7 +301,7 @@ export default {
     0% {
       right: -100%;
     }
-    50%,100% {
+    50%, 100% {
       right: 100%;
     }
   }
@@ -309,22 +320,26 @@ export default {
     0% {
       bottom: -100%;
     }
-    50%,100% {
+    50%, 100% {
       bottom: 100%;
     }
   }
-  .forgotPassword{
+
+  .forgotPassword {
     cursor: pointer;
     padding: 5vh 0 0 0;
     transition: 0.3s;
   }
-  .forgotPassword:hover{
+
+  .forgotPassword:hover {
     text-shadow: 0 0 20px #ffffff;
   }
-  .forgotPassword:active{
+
+  .forgotPassword:active {
     color: #5BC0BE;
     text-shadow: 0 0 20px #5BC0BE;
   }
+
   .placeholder-color {
     input::placeholder {
       color: #6C7797 !important;
@@ -336,7 +351,7 @@ export default {
   }
 }
 
-#registerButton{
+#registerButton {
   letter-spacing: 0;
   padding: 10px 20px;
 }

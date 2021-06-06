@@ -36,11 +36,9 @@ name: "MainLayout",
   methods:{
     nextSlide(){
       this.$emit('nextSlide')
-      console.log(this.visibleSlide)
     },
     prevSlide(){
       this.$emit('prevSlide')
-      console.log(this.visibleSlide)
     },
     changeSlide(checkedRadioNum){
       this.$emit('changeSlide',checkedRadioNum)
