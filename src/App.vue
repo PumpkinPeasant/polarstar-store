@@ -45,5 +45,7 @@ export default {
   p {
     margin: 0;
   }
-
+.theme--dark.v-btn--active:hover::before, .theme--dark.v-btn--active::before {
+    opacity: 0;
+}
 </style>
