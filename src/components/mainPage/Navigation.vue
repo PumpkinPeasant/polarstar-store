@@ -1,24 +1,33 @@
 <template>
   <nav v-bind:class="navClass">
-    <a href="#" v-scroll-to="{
+    <div class="navLogo">
+      <a href="#" v-scroll-to="{
           el: '#home',
           duration: 200,
           lazy: true,
           easing: 'linear',
           offset: 0,
           }">
-      <img class="logo" id="logo_nav" :src=getImage alt="PolarStar логотип">
-    </a>
+        <img class="logo" id="logo_nav" :src=getImage alt="PolarStar логотип">
+      </a>
+    </div>
     <div class="navItems">
       <ul>
-        <li>
-          <a href="">Каталог</a>
-        </li>
-        <li>
-          <a href="">Компания</a>
-        <li>
-        <a href="">Контакты</a>
-        </li>
+        <router-link to="/catalog" tag="span">
+          <li>
+            <span>Каталог</span>
+          </li>
+        </router-link>
+        <router-link to="/company" tag="span">
+          <li>
+            <span href="">Компания</span>
+          </li>
+        </router-link>
+        <router-link to="/contacts" tag="span">
+          <li>
+            <span href="">Контакты</span>
+          </li>
+        </router-link>
       </ul>
     </div>
     <div class="navMenu">
@@ -38,7 +47,7 @@
               </v-btn>
             </v-btn-toggle>
       <login-dialog/>
-      <v-btn icon color="#5BC0BE">
+      <v-btn icon color="#F2F2F2">
         <v-icon>mdi-cart-outline</v-icon>
       </v-btn>
     </div>
@@ -98,7 +107,6 @@ nav{
   .navItems{
     display: flex;
     justify-items: center;
-    flex-grow: 1;
     justify-content: center;
   }
   ul {
@@ -109,26 +117,35 @@ nav{
     padding-inline-start: 0;
     li{
       display: flex;
-      font-family: Prata, sans-serif;
       position: relative;
       color: #FDFDF9;
-      font-size: 1vw;
+      font-size: 0.90vw;
       list-style: none;
       cursor: pointer;
       letter-spacing: 0.08em;
-      a{
+      span{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        padding: 0 1vw;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         position: relative;
         color: #FDFDF9;
         text-decoration: none;
         transition: 0.4s;
         border-bottom:2px solid transparent;
       }
-      a:hover{
-        border-bottom:2px solid #D68C45;
+      span:hover{
+        color: #5BC0BE;
       }
     }
   }
-
+  .navMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+  }
   .logo{
     display: flex;
     position: relative;

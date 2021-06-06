@@ -1,7 +1,7 @@
 <template>
   <v-dialog width="unset">
     <template v-slot:activator="{on,}">
-      <v-btn v-on="on" icon color="#5BC0BE">
+      <v-btn v-on="on" icon color="#F2F2F2">
         <v-icon>mdi-account-outline</v-icon>
       </v-btn>
     </template>
