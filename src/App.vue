@@ -22,14 +22,7 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-@font-face {
-  font-family: "Jost";
-  src: url("/assets/fonts/Jost.ttf") format("ttf");
-}
-@font-face {
-  font-family: "Jost-Regular";
-  src: url("/assets/fonts/Jost-Regular.ttf") format("ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;600;700&display=swap');
   body {
     margin: 0;
     padding: 0;
