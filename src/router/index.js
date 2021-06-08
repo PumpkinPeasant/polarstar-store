@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 import MainPage from '../views/MainPage.vue'
 import Catalog from '../views/Catalog.vue'
 import About from "@/views/About";
+import Company from "@/views/Company";
+import Contacts from "@/views/Contacts";
+import Delivery from "@/views/Delivery";
+import FAQ from "@/views/Faq";
 
 Vue.use(VueRouter)
 
@@ -16,6 +20,26 @@ const routes = [
     path: '/catalog',
     name: 'Catalog',
     component: Catalog
+  },
+  {
+    path: '/company',
+    name: 'Company',
+    component: Company
+  },
+  {
+    path: '/contacts',
+    name: 'Contacts',
+    component: Contacts
+  },
+  {
+    path: '/delivery',
+    name: 'Delivery',
+    component: Delivery
+  },
+  {
+    path: '/faq',
+    name: 'FAQ',
+    component: FAQ
   },
   {
     path: '/about',

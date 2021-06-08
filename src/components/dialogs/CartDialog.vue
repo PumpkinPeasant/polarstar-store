@@ -7,7 +7,7 @@
         transition="scroll-x-transition"
     >
       <template v-slot:activator="{on,}">
-        <v-btn v-on="on" icon color="#F2F2F2">
+        <v-btn v-on="on" icon :color="activatorColor">
           <v-icon>mdi-cart-outline</v-icon>
         </v-btn>
       </template>
@@ -73,6 +73,10 @@ export default {
   name: "CartDialog",
   props: {
     visible: Boolean,
+    activatorColor: {
+      type: String,
+      default: '#F2F2F2'
+    }
   },
   data() {
     return {

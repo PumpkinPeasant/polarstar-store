@@ -1,11 +1,11 @@
 <template>
   <v-dialog width="unset" fullscreen
             hide-overlay
-            transition="scroll-y-transition"
+            transition="fade-transition"
             v-model="visible"
   >
     <template v-slot:activator="{on,}">
-      <v-btn v-on="on" icon color="#F2F2F2">
+      <v-btn v-on="on" icon :color="activatorColor">
         <v-icon>mdi-account-outline</v-icon>
       </v-btn>
     </template>
@@ -29,11 +29,11 @@
               <v-window-item :value="1">
                 <v-card-title class="justify-center">Вход в личный кабинет</v-card-title>
                 <v-card-text class="placeholder-color">
-                  <v-text-field background-color="#1C2541" color="#6C7797" filled
+                  <v-text-field v-model="email.password" background-color="#1C2541" color="#6C7797" filled
                                 placeholder="Номер телефона или E-mail"
                                 type="email" prepend-inner-icon="mdi-account-outline">
                   </v-text-field>
-                  <v-text-field background-color="#1C2541" color="#6C7797" filled placeholder="Пароль"
+                  <v-text-field v-model="loginUser.password" background-color="#1C2541" color="#6C7797" filled placeholder="Пароль"
                                 type="password" prepend-inner-icon="mdi-lock-outline">
                   </v-text-field>
                 </v-card-text>
@@ -50,7 +50,7 @@
                     </v-btn>
                   </div>
                   <div>
-                    <a class="justify-center">
+                    <a class="justify-center" @click="signIn">
                       <span></span>
                       <span></span>
                       <span></span>
@@ -67,19 +67,19 @@
                 <v-card-title class="justify-center">Регистрация</v-card-title>
                 <v-card-text class="placeholder-color">
                   <v-text-field v-model="registerUser.name" background-color="#1C2541" color="#6C7797" filled placeholder="Имя"
-                                type="name" prepend-inner-icon="mdi-account-outline">
+                                type="name" prepend-inner-icon="mdi-account-outline" :rules="nameRules" dark>
                   </v-text-field>
                   <v-text-field v-model="registerUser.surname" background-color="#1C2541" color="#6C7797" filled placeholder="Фамилия"
-                                type="surname" prepend-inner-icon="mdi-account-outline">
+                                type="surname" prepend-inner-icon="mdi-account-outline" :rules="surnameRules" dark>
                   </v-text-field>
                   <v-text-field v-model="registerUser.email" background-color="#1C2541" color="#6C7797" filled placeholder="E-mail"
-                                type="email" prepend-inner-icon="mdi-account-outline">
+                                type="email" prepend-inner-icon="mdi-account-outline" :rules="emailRules" dark>
                   </v-text-field>
                   <v-text-field v-model="registerUser.password" background-color="#1C2541" color="#6C7797" filled placeholder="Пароль"
-                                type="password" prepend-inner-icon="mdi-lock-outline">
+                                type="password" prepend-inner-icon="mdi-lock-outline" :rules="passwordRules" dark>
                   </v-text-field>
                 </v-card-text>
-                <v-card-actions class="loginActions">
+                <v-card-actions class="loginActions pb-lg-16">
                   <div>
                     <a class="justify-center" id="registerButton" @click="signUp">
                       <span></span>
@@ -94,7 +94,6 @@
             </v-window>
           </v-card>
         </div>
-
       </div>
     </section>
 
@@ -104,6 +103,12 @@
 <script>
 export default {
   name: "LoginDialog",
+  props: {
+    activatorColor: {
+      type: String,
+      default: '#F2F2F2'
+    }
+  },
   data() {
     return {
       step: 1,
@@ -123,6 +128,10 @@ export default {
         (v) => !!v || 'Пожалуйста введите имя',
         (v) => (v && v.length >= 2) || 'Имя должно состоять как минимум из двух символов'
       ],
+        surnameRules: [
+      (v) => !!v || 'Пожалуйста введите фамилию',
+      (v) => (v && v.length >= 2) || 'Фамилия должна состоять как минимум из двух символов'
+    ],
       countries: [],
       genders: [],
       player: [],
@@ -205,7 +214,7 @@ export default {
   width: 35.6vw;
   background-color: #0B132B !important;
   color: #F2F2F2 !important;
-  padding: 6vh 2vw;
+  padding: 6vh 2vw 0 2vw;
 
   .v-card__title {
     font-family: Jost, sans-serif;
@@ -239,7 +248,7 @@ export default {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
+    box-shadow: 0 0 1px #03e9f4,
     0 0 25px #03e9f4,
     0 0 50px #03e9f4,
     0 0 100px #03e9f4;
@@ -342,9 +351,11 @@ export default {
 
   .placeholder-color {
     input::placeholder {
-      color: #6C7797 !important;
+      color: #6c7797 !important;
     }
-
+    .v-text-field__slot{
+      color: white;
+    }
     .v-icon {
       color: #5BC0BE;
     }
@@ -355,6 +366,7 @@ export default {
   letter-spacing: 0;
   padding: 10px 20px;
 }
+
 
 
 </style>
