@@ -22,6 +22,11 @@ const routes = [
     component: Catalog
   },
   {
+    path: '/catalog/:productId',
+    name: 'Product',
+    component: Catalog
+  },
+  {
     path: '/company',
     name: 'Company',
     component: Company

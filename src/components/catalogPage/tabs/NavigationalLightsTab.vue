@@ -1,11 +1,26 @@
 <template>
   <div class="lightsTab">
-    <h1>Навигационные огни</h1>
+    <div class="tabHeader">
+      <h1>Навигационные огни</h1>
+      <v-tooltip right>
+        <template v-slot:activator="{ on,  }">
+          <v-icon v-on="on" color="#E5E5E5">
+            mdi-help-circle-outline
+          </v-icon>
+        </template>
+        <div style="width: 30vw" >
+          <span >Совокупность светотехнических приборов, предназначенных для обозначения судна или воздушного судна,
+          указания его типа, а также характера движения или стоянки в ночное время.</span>
+        </div>
+
+      </v-tooltip>
+    </div>
+
     <div class="lightsSettingsBlock">
 
       <div class="chipsAndSearchBar">
         <div class="chips">
-          <v-chip  :outlined="!explosionProtection"
+          <v-chip :outlined="!explosionProtection"
                   v-model="explosionProtection" @click="explosionProtection = !explosionProtection">
             Взрывозащищённые
             <v-icon v-show="explosionProtection" style="font-size: 20px" class="pl-2">
@@ -237,14 +252,17 @@ export default {
 
 <style scoped lang="scss">
 .lightsTab {
-  h1{
+  h1 {
     font-family: Jost, sans-serif;
     font-weight: 500;
     font-size: 52px;
     letter-spacing: -0.03em;
   }
 }
+.tabHeader{
+  display: flex;
 
+}
 .chipsAndSearchBar {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -252,36 +270,45 @@ export default {
   justify-content: space-between;
   padding-bottom: 2vh;
 }
-.chips{
+
+.chips {
   display: flex;
   gap: 1vw;
+
   .v-chip {
     border: 2px solid #5BC0BE;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
   }
-  .v-chip:hover{
-    box-shadow: 0 0 5px 1px rgba(112,234,231,0.7);
+
+  .v-chip:hover {
+    box-shadow: 0 0 5px 1px rgba(112, 234, 231, 0.7);
   }
-  .v-chip--active{
+
+  .v-chip--active {
     background-color: #5BC0BE;
     border: none;
     color: white;
   }
 }
+
 .searchBar {
   width: 100%;
   display: flex;
-  .v-text-field--outlined{
+
+  .v-text-field--outlined {
     border: none;
   }
 }
-.searchBarField{
+
+.searchBarField {
 
 }
-.v-text-field--outlined{
+
+.v-text-field--outlined {
   border-radius: 0;
 }
+
 .searchBarButton {
   display: flex;
   justify-content: center;
@@ -290,9 +317,11 @@ export default {
   cursor: pointer;
   width: 5.5vh;
 }
-.searchBarButton:hover > .v-icon{
+
+.searchBarButton:hover > .v-icon {
   font-size: 35px;
 }
+
 .filtersBar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
