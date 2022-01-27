@@ -2,5 +2,5 @@ module.exports = {
   transpileDependencies: [
     'vuetify'
   ],
-  publicPath: '/polarstar-store/'
+  publicPath:  process.env.NODE_ENV === "production" ? "/polarstar-store/" : "/"
 }
