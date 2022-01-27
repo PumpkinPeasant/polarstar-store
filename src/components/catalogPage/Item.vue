@@ -5,7 +5,7 @@
       elevation="3"
   >
     <div class="itemImage">
-      <v-img src="../../assets/images/catalogPage/navlogonobg.png"/>
+      <v-img :src="getImgUrl(item.img)"/>
     </div>
     <v-card-title class="itemTitle">{{item.name}}</v-card-title>
     <v-card-text class="itemInfo">
@@ -49,6 +49,11 @@ export default {
   props: {
     item: Object
   },
+  methods:{
+    getImgUrl(pic) {
+      return require('../../assets/images/mainPage/'+pic)
+    },
+  }
 }
 </script>
 

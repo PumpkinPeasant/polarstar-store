@@ -158,7 +158,7 @@ export default {
           img: 'navlights1.png'
         },
         {
-          name: 'Tricolor RB 2NM',
+          name: 'SL40 R5 Xenon',
           param1: 'Расход энергии, Вт',
           value1: '1-5',
           param2: 'Видимость, миль',
@@ -166,10 +166,10 @@ export default {
           param3: 'Вес, кг',
           value3: '0.3-0.5',
           price: '5 900 ₽',
-          img: 'navlights1.png'
+          img: 'navlights3.png'
         },
         {
-          name: 'Tricolor RB 2NM',
+          name: 'DHR115',
           param1: 'Расход энергии, Вт',
           value1: '1-5',
           param2: 'Видимость, миль',
@@ -177,10 +177,10 @@ export default {
           param3: 'Вес, кг',
           value3: '0.3-0.5',
           price: '5 900 ₽',
-          img: 'navlights1.png'
+          img: 'lamp3.png'
         },
         {
-          name: 'Tricolor RB 2NM',
+          name: 'DHR40LED - 01',
           param1: 'Расход энергии, Вт',
           value1: '1-5',
           param2: 'Видимость, миль',
@@ -188,7 +188,7 @@ export default {
           param3: 'Вес, кг',
           value3: '0.3-0.5',
           price: '5 900 ₽',
-          img: 'navlights1.png'
+          img: 'lamp2.png'
         },
         {
           name: 'Tricolor RB 2NM',
